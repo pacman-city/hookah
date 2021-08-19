@@ -1,0 +1,38 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding-top: 15px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        height: 55px;
+        width: 55px;
+        display: inline-block;
+        background: no-repeat center/cover url(../images/logo.png);
+    }
+
+    .social {
+        display: none;
+    }
+
+    .page-tab {
+        position: absolute;
+        right: 0;
+        top: 85px;
+
+        transform-origin: 100% 100%;
+        transform: rotate(-90deg);
+    }
+
+
+
+
+}

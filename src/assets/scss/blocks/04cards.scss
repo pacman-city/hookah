@@ -1,0 +1,47 @@
+.images {
+    margin-top: 200px;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    justify-content: space-between;
+    margin-bottom: 500px;
+
+    display: none;
+
+
+    .card {
+        font-size: 22px;
+
+        svg {
+            transition: all 0.5s linear;
+        }
+
+        &:hover {
+            img {
+                filter: drop-shadow(0 0 1px black);
+            }
+
+            svg {
+                transform: scale(1.01);
+                color: #9B51E0;
+
+            }
+        }
+    }
+
+    >div {
+        position: relative;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    svg {
+        color: #F2994A;
+        filter: drop-shadow(0 0 8px #9B51E0);
+        width: 100%;
+    }
+}

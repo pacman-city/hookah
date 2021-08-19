@@ -1,0 +1,158 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat";
+    font-style: normal;
+    line-height: 1.2;
+    color: $black;
+
+    background-color: $white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1920px;
+    position: relative;
+}
+
+.container {
+    padding: 0 10px;
+
+    @media (min-width: $md) {
+        padding: 0 40px;
+    }
+}
+
+//-------------------------------------------------- TYPOGRAPHY
+h1 {
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 24px;
+    color: $white;
+
+    @media (min-width: $md) {
+        font-size: 42px;
+    }
+}
+
+h2 {
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 24px;
+    color: $black;
+
+    @media (min-width: $md) {
+        font-size: 36px;
+    }
+
+    @media (min-width: $lg) {
+        font-size: 42px;
+    }
+}
+
+.accent {
+    color: $accent;
+}
+
+//-------------------------------------------------- BUTTONS
+button {
+    cursor: pointer;
+}
+
+.social {
+    color: $accentControls;
+    transition: color 0.2s ease-out;
+
+    svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    &:hover {
+        color: $accentControlsActive;
+    }
+}
+
+.call {
+    font-size: 0;
+    text-decoration: none;
+    vertical-align: top;
+
+    span {
+        display: none;
+
+        margin-left: 10px;
+        font-family: "Montserrat Alternates";
+        font-size: 20px;
+        font-weight: 700;
+        color: $white;
+    }
+
+    svg {
+        line-height: 20px;
+        vertical-align: top;
+        width: 36px;
+        height: 36px;
+    }
+
+    @media (min-width: $md) {
+        span {
+            display: inline-block;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.page-tab {
+    display: block;
+    padding: 5px 17px;
+
+    font-size: 12px;
+    font-weight: 700;
+    color: $white;
+
+    background: $accent;
+    border: 2px solid $accent;
+    border-radius: 10px 10px 0 0;
+
+    &.active {
+        display: none;
+    }
+
+    // @media (min-width: $md) {
+    //     border-color: $accent;
+    //     background: $accent;
+    //     background: $tabColor;
+
+    //     &.active {
+    //         display: block;
+    //         background: $accent;
+    //     }
+    // }
+}
+
+.btn {
+    display: block;
+
+    color: $white;
+    background: $accentControls;
+    border: 3px solid $white;
+    border-radius: 60px;
+
+    box-shadow: 0 0 10px 3px $accentControls;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+        background: $accentControlsActive;
+        box-shadow: 0 0 10px 3px $accentControlsActive;
+    }
+}
