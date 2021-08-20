@@ -1,32 +1,40 @@
 .intro {
     height: 100vh;
-    max-height: 900px;
-    min-height: 700px;
+    max-height: 825px;
+    min-height: 640px;
 
     background: no-repeat center/cover url(../images/intro/background.jpg);
 
     .container {
+        height: 100%;
         display: grid;
         grid-template-rows: repeat(2, auto);
         justify-items: center;
+        align-content: center;
     }
 
     &__image {
-        padding-top: 50px;
+        padding-top: 20px;
 
         img {
-            max-width: 450px;
+            max-width: 350px;
         }
     }
 
     h1 {
+        max-width: 400px;
         text-align: center;
     }
 
     p {
-        margin-top: 15px;
+        max-width: 300px;
+        margin: 15px auto 0;
         color: $white;
         text-align: center;
+
+        span {
+            font-weight: 600;
+        }
     }
 
     .btn {
@@ -34,5 +42,84 @@
         width: 100%;
         max-width: 300px;
         height: 50px;
+        font-size: 15px;
+    }
+
+    @media (min-width: $sm) {
+        min-height: 750px;
+
+        &__image img {
+            max-width: 450px;
+        }
+    }
+
+    @media (min-width: $md) {
+        height: 100vh;
+        max-height: 1024px;
+        min-height: 900px;
+
+        .container {
+            display: grid;
+            grid-template: 211px 1fr / repeat(2, auto);
+            justify-items: start;
+        }
+
+        &__image {
+            grid-area: 1 / 2 / -1 / -1;
+            align-self: end;
+            padding-top: 50px;
+
+            img {
+                max-width: 450px;
+            }
+        }
+
+        &__content {
+            grid-area: 1 / 1 / 2 / -1;
+        }
+
+        h1 {
+            margin-top: 290px;
+            text-align: left;
+            max-width: 687px;
+        }
+
+        p {
+            margin: 30px 0 0;
+            max-width: 325px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .btn {
+            margin: 45px 0 0;
+            width: 211px;
+            height: 56px;
+            font-size: 18px;
+        }
+    }
+
+    @media (min-width: $xl) {
+        height: 100vh;
+        max-height: 1024px;
+        min-height: 830px;
+
+        &__image {
+            justify-self: end;
+
+            img {
+                max-width: 550px;
+            }
+        }
+    }
+
+    @media (min-width: $xxl) {
+        &__image {
+            margin-right: -100px;
+
+            img {
+                max-width: 600px;
+            }
+        }
     }
 }

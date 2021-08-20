@@ -18,9 +18,12 @@ main {
     margin: 0 auto;
     max-width: 1920px;
     position: relative;
+    overflow: hidden;
 }
 
 .container {
+    margin: 0 auto;
+    max-width: 1300px;
     padding: 0 10px;
 
     @media (min-width: $md) {
@@ -114,36 +117,80 @@ button {
 
 .page-tab {
     display: block;
-    padding: 5px 17px;
+    height: 24px;
+    padding: 0 17px;
+
+    position: absolute;
+    right: 0;
+    top: 85px;
+
+    transform-origin: 100% 100%;
+    transform: rotate(-90deg);
 
     font-size: 12px;
     font-weight: 700;
     color: $white;
 
     background: $accent;
-    border: 2px solid $accent;
     border-radius: 10px 10px 0 0;
+    border: 2px solid $accent;
 
     &.active {
         display: none;
     }
 
-    // @media (min-width: $md) {
-    //     border-color: $accent;
-    //     background: $accent;
-    //     background: $tabColor;
+    @media (min-width: $md) {
+        height: 55px;
+        width: 210px;
+        padding: 0 19px;
 
-    //     &.active {
-    //         display: block;
-    //         background: $accent;
-    //     }
-    // }
+        border-radius: 0 0 10px 10px;
+        border-color: $tabColor;
+        background: $tabColor;
+
+        right: 280px;
+        top: -30px;
+
+        transform: none;
+
+        &.page-tab-secondary {
+            right: 40px;
+        }
+
+        &.active {
+            display: block;
+            background: $accent;
+            border-color: $accent;
+            box-shadow: -3px 0px 15px 3px $accent;
+        }
+    }
+
+    @media (min-width: $xl) {
+        height: 65px;
+        left: 260px;
+        top: -40px;
+
+        transition: top 0.1s ease-out;
+
+        &.page-tab-secondary {
+            left: 500px;
+        }
+
+        &.active {
+            top: -30px;
+        }
+
+        &:hover {
+            top: -30px;
+        }
+    }
 }
 
 .btn {
     display: block;
 
     color: $white;
+    font-weight: 700;
     background: $accentControls;
     border: 3px solid $white;
     border-radius: 60px;

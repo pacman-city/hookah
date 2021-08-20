@@ -10,6 +10,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
     }
 
     &__logo {
@@ -23,16 +24,35 @@
         display: none;
     }
 
-    .page-tab {
-        position: absolute;
-        right: 0;
-        top: 85px;
+    @media (min-width: $md) {
+        padding-top: 30px;
 
-        transform-origin: 100% 100%;
-        transform: rotate(-90deg);
+        .container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+        &__logo {
+            height: 110px;
+            width: 110px;
+            margin-right: auto;
+        }
+
+        .social {
+            display: inline-block;
+
+            &[href^="https://facebook"] {
+                margin-right: 20px;
+            }
+
+            &[href^="https://instagram"] {
+                margin-right: 50px;
+            }
+        }
+
+        .call {
+            margin-bottom: 7px;
+        }
     }
-
-
-
-
 }
