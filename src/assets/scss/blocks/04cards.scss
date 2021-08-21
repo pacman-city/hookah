@@ -1,47 +1,97 @@
-.images {
-    margin-top: 200px;
-    padding: 0 30px;
-    display: grid;
-    grid-template-columns: repeat(5, 200px);
-    justify-content: space-between;
-    margin-bottom: 500px;
+.cards {
+    &__wrapper {
+        margin-top: 20px;
+    }
 
-    display: none;
+    h2 {
+        text-align: center;
+    }
 
+    &__item {
+        max-width: 400px;
+        margin: 0 auto 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 30px 0 #00000020;
+    }
 
-    .card {
-        font-size: 22px;
+    p {
+        max-width: 270px;
+        margin: 0 auto;
+        padding: 0 16px 20px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    @media (min-width: $md) {
+        &__wrapper {
+            width: 686px;
+            margin: 45 px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 25px;
+            column-gap: 28px;
+        }
+
+        &__item {
+            width: 210px;
+            border-radius: 15px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    }
+
+    @media (min-width: $xl) {
+        &__wrapper {
+            width: unset;
+            gap: 0;
+            justify-content: space-between;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
+    &__item {
+        >div {
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
 
         svg {
-            transition: all 0.5s linear;
+            width: 100%;
+            color: #F2994A;
+
+            filter: drop-shadow(1px 1px 6px #9B51E0);
+            transition: filter 0.6s ease-out, transform 0.3s linear;
         }
 
         &:hover {
             img {
-                filter: drop-shadow(0 0 1px black);
+                transition: filter 0.3s linear;
+                filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9));
             }
 
             svg {
-                transform: scale(1.01);
+                transform: scale(1.03);
                 color: #9B51E0;
 
             }
         }
-    }
-
-    >div {
-        position: relative;
-    }
-
-    img {
-        position: absolute;
-        width: 100%;
-        z-index: 1;
-    }
-
-    svg {
-        color: #F2994A;
-        filter: drop-shadow(0 0 8px #9B51E0);
-        width: 100%;
     }
 }
