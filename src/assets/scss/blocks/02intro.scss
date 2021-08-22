@@ -60,13 +60,14 @@
 
         .container {
             display: grid;
-            grid-template: 211px 1fr / repeat(2, auto);
+            grid-template: 1fr / repeat(2, auto);
             justify-items: start;
         }
 
         &__image {
             grid-area: 1 / 2 / -1 / -1;
             align-self: end;
+            justify-self: end;
             padding-top: 50px;
 
             img {
@@ -104,22 +105,14 @@
         max-height: 1024px;
         min-height: 830px;
 
-        &__image {
-            justify-self: end;
-
-            img {
-                max-width: 550px;
-            }
+        &__image img {
+            max-width: 550px;
         }
     }
 
     @media (min-width: $xxl) {
         &__image {
-            margin-right: -100px;
-
-            img {
-                max-width: 600px;
-            }
+            margin-right: -80px;
         }
     }
 }

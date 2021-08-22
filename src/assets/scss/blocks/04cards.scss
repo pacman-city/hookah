@@ -1,53 +1,56 @@
+// ------------------------------------------------------top row
 .cards {
-    &__wrapper {
-        margin-top: 20px;
-    }
+    background: no-repeat bottom center/cover url(../images/cards/background.jpg);
 
     h2 {
         text-align: center;
     }
 
-    &__item {
-        max-width: 400px;
-        margin: 0 auto 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 30px 0 #00000020;
-    }
+    &__wrapper-top {
+        margin-top: 20px;
 
-    p {
-        max-width: 270px;
-        margin: 0 auto;
-        padding: 0 16px 20px;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.4;
+        .cards__item {
+            max-width: 400px;
+            margin: 0 auto 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px 0 #00000020;
+        }
+
+        p {
+            max-width: 270px;
+            margin: 0 auto;
+            padding: 0 16px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
     }
 
     @media (min-width: $md) {
-        &__wrapper {
+        &__wrapper-top {
             width: 686px;
-            margin: 45 px auto 0;
+            margin: 45px auto 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             row-gap: 25px;
             column-gap: 28px;
-        }
 
-        &__item {
-            width: 210px;
-            border-radius: 15px;
-            margin: 0;
-        }
+            .cards__item {
+                width: 210px;
+                border-radius: 15px;
+                margin: 0;
+            }
 
-        p {
-            font-size: 15px;
+            p {
+                font-size: 15px;
+            }
         }
     }
 
     @media (min-width: $xl) {
-        &__wrapper {
+        &__wrapper-top {
             width: unset;
             gap: 0;
             justify-content: space-between;
@@ -61,7 +64,7 @@
     ////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
-    &__item {
+    &__wrapper-top &__item {
         >div {
             position: relative;
         }
@@ -91,6 +94,96 @@
                 transform: scale(1.03);
                 color: #9B51E0;
 
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------bottom row
+.cards {
+    &__wrapper-bottom {
+        max-width: 400px;
+        margin: 65px auto 0;
+        display: grid;
+        grid-template: repeat(6, auto) / repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 40px;
+
+        h2 {
+            grid-area: 1 / 1 / 2 / -1;
+        }
+
+        p {
+            height: 50px;
+            margin-top: 20px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            font-family: "Montserrat Alternates";
+            font-weight: 700;
+            border-radius: 5px;
+
+            box-shadow: 0 4px 30px 0 #00000015;
+        }
+
+        >p {
+            flex-direction: column;
+            height: 100%;
+            margin: 0;
+
+            font-size: 14px;
+            color: $white;
+            border-radius: 15px;
+            background: $accentControls;
+
+            svg {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    @media (min-width: $md) {
+        &__wrapper-bottom {
+            max-width: 688px;
+            margin-top: 100px;
+            grid-template: repeat(5, auto) / repeat(3, 1fr);
+            column-gap: 30px;
+
+            >p {
+                height: 90px;
+                flex-direction: row;
+                grid-area: -2 / 1 / -1 / -1;
+
+                font-size: 18px;
+                border: 3px solid $white;
+
+                svg {
+                    margin: 0 15px 0 0;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $xl) {
+        &__wrapper-bottom {
+            max-width: unset;
+            margin-top: 100px;
+            grid-template: repeat(4, auto) / 1fr repeat(3, 280px);
+
+            h2 {
+                max-width: 240px;
+                margin-right: -50px;
+                grid-area: 1 / 1 / -1 / 2;
+                text-align: left;
+            }
+
+            >p {
+                grid-area: -2 / 2 / -1 / -1;
             }
         }
     }
