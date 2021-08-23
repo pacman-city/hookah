@@ -1,0 +1,106 @@
+.columns {
+    padding: 80px 0 55px;
+
+    h2 {
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        flex-basis: 300px;
+        margin-top: 30px;
+    }
+
+    svg {
+        margin: 0 auto;
+        display: block;
+        width: 120px;
+        height: 120px;
+        filter: drop-shadow(0 0 30px #00000020);
+    }
+
+    b {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        min-height: 70px;
+        display: flex;
+        justify-content: center;
+
+        text-align: center;
+        font-family: "Montserrat Alternates";
+        font-weight: 700;
+    }
+
+    p {
+        padding-top: 15px;
+
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.4;
+
+        border-top: 1px solid $border;
+    }
+
+    @media (min-width: $sm) {
+        &__wrapper {
+            gap: 4%;
+        }
+
+        &__item {
+            flex-basis: 48%;
+            align-items: center;
+        }
+
+        p {
+            min-height: 100px;
+        }
+    }
+
+    @media (min-width: $md) {
+        padding: 80px 0 75px;
+
+        &__wrapper {
+            gap: 3.5%;
+        }
+
+        &__item {
+            margin-top: 40px;
+            flex-basis: 31%;
+        }
+
+        b {
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            padding-top: 20px;
+        }
+    }
+
+    @media (min-width: $lg) {
+        padding: 115px 0;
+
+        &__wrapper {
+            gap: 6.5%;
+        }
+
+        &__item {
+            margin-top: 55px;
+            flex-basis: 29%;
+        }
+
+        b {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}

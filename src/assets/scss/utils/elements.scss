@@ -1,5 +1,19 @@
 html {
     scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 18px;
+        background: #EAEAEA;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $accentControls;
+        border-radius: 3px;
+
+        &:active {
+            background: $accentControlsActive;
+        }
+    }
 }
 
 body {
@@ -23,7 +37,32 @@ main {
 
 .container {
     margin: 0 auto;
-    max-width: 1300px;
+    padding: 0 10px;
+
+    @media (min-width: $sm) {
+        padding: 0;
+        max-width: 556px; //10px side spacing
+    }
+
+    @media (min-width: $md) {
+        max-width: 688px; //40px side spacing
+    }
+
+    @media (min-width: $lg) {
+        max-width: 912px;
+    }
+
+    @media (min-width: $xl) {
+        max-width: 1120px;
+    }
+
+    @media (min-width: $xxl) {
+        max-width: 1300px;
+    }
+}
+
+.containerFluid {
+    margin: 0 auto;
     padding: 0 10px;
 
     @media (min-width: $md) {

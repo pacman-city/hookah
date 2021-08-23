@@ -13,16 +13,12 @@
         align-content: center;
     }
 
-    &__image {
-        padding-top: 20px;
-
-        img {
-            max-width: 350px;
-        }
+    &__image img {
+        max-width: 320px;
     }
 
     h1 {
-        max-width: 400px;
+        max-width: 300px;
         text-align: center;
     }
 
@@ -60,22 +56,21 @@
 
         .container {
             display: grid;
-            grid-template: 1fr / repeat(2, auto);
-            justify-items: start;
+            grid-template: 1fr / auto 1fr;
+
         }
 
         &__image {
             grid-area: 1 / 2 / -1 / -1;
-            align-self: end;
-            justify-self: end;
-            padding-top: 50px;
+            place-self: end;
 
             img {
-                max-width: 450px;
+                max-width: 400px;
             }
         }
 
         &__content {
+            justify-self: start;
             grid-area: 1 / 1 / 2 / -1;
         }
 
@@ -105,14 +100,22 @@
         max-height: 1024px;
         min-height: 830px;
 
+        .container {
+            max-width: 1300px;
+        }
+
         &__image img {
-            max-width: 550px;
+            max-width: 450px;
         }
     }
 
     @media (min-width: $xxl) {
         &__image {
             margin-right: -80px;
+
+            img {
+                max-width: 550px;
+            }
         }
     }
 }
