@@ -102,8 +102,16 @@ h2 {
 }
 
 //-------------------------------------------------- BUTTONS
+a,
+button {
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 button {
     cursor: pointer;
+    background: transparent;
 }
 
 .social {
