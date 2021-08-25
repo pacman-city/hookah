@@ -25,8 +25,7 @@
         }
 
         &:not(:first-of-type) {
-            outline: 1px solid red; ///////////////////////////////////
-            display: none;
+            display: none; ///////////////////////////////////
         }
     }
 
@@ -153,6 +152,10 @@
 
         &__item {
             max-width: unset;
+
+            &:not(:first-of-type) {
+                display: block; //////////////////////
+            }
         }
 
         &__navs {

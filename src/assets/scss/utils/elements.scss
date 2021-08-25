@@ -97,6 +97,17 @@ h2 {
     }
 }
 
+h3 {
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 20px;
+    color: $black;
+
+    @media (min-width: $md) {
+        font-size: 22px;
+    }
+}
+
 .accent {
     color: $accent;
 }
