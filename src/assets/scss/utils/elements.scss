@@ -28,6 +28,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+//-------------------------------------------------- CONTAINERS
 main {
     margin: 0 auto;
     max-width: 1920px;
@@ -61,12 +62,16 @@ main {
     }
 }
 
-.containerFluid {
+.container-fluid {
     margin: 0 auto;
     padding: 0 10px;
 
     @media (min-width: $md) {
         padding: 0 40px;
+    }
+
+    @media (min-width: $md) {
+        max-width: 1300px;
     }
 }
 
@@ -261,3 +266,5 @@ button {
         box-shadow: 0 0 10px 3px $accentControlsActive;
     }
 }
+
+//-------------------------------------------------- MISCELLANEOUS

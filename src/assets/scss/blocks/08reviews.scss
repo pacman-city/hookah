@@ -4,10 +4,6 @@
         text-align: center;
     }
 
-    &__wrapper {
-        margin-top: 20px;
-    }
-
     &__item {
         margin: 0 auto;
         max-width: 300px;
@@ -18,14 +14,10 @@
         flex-wrap: wrap;
         align-items: center;
 
-        box-shadow: 0 4px 30px 0 #00000030;
+        box-shadow: 0 4px 20px 0 #00000030;
 
         >div {
             margin-left: 15px;
-        }
-
-        &:not(:first-of-type) {
-            display: none; ///////////////////////////////////
         }
     }
 
@@ -57,12 +49,19 @@
         line-height: 1.4;
     }
 
+    // ------------------------------------------ glide
+    .glide__slides {
+        padding: 20px 0;
+    }
+
     // ------------------------------------------ nav buttons
     &__navs {
-        margin-top: 5px;
+        margin-top: -5px;
 
-        display: flex;
-        justify-content: center;
+        div {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     button {
@@ -79,16 +78,19 @@
         margin-right: 10px;
     }
 
+    @media (min-width: $sm) {
+        &__item {
+            max-width: 556px;
+            width: calc(100% - 20px);
+        }
+    }
+
     @media (min-width: $md) {
         margin-top: -160px;
 
         h2 {
             margin-top: 0;
             color: $white;
-        }
-
-        &__wrapper {
-            margin-top: 40px;
         }
 
         &__item {
@@ -120,46 +122,38 @@
             font-size: 16px;
         }
 
-        // ------------------------------------------ nav buttons
-        .container {
-            position: relative;
-        }
+        // ------------------------------------------ nav buttons md
+        position: relative;
 
         &__navs {
             position: absolute;
             width: 100%;
             bottom: 93px;
-            padding: 0 40px;
-            justify-content: space-between;
+
+            >div {
+                width: 100%;
+                max-width: 688px;
+                margin: 0 auto;
+                justify-content: space-between;
+            }
         }
-    }
 
-    @media (min-width: $lg) {
-
-        // ------------------------------------------ nav buttons
-        &__navs {
-            padding: 0 140px;
+        // ------------------------------------------ glide md
+        .glide__slides {
+            padding: 40px 0 20px;
         }
     }
 
     @media (min-width: $xl) {
-        margin-top: -200px;
-
-        &__wrapper {
-            display: flex;
-            gap: 30px;
-        }
-
-        &__item {
-            max-width: unset;
-
-            &:not(:first-of-type) {
-                display: block; //////////////////////
-            }
-        }
+        margin: -200px auto 0;
+        max-width: 1120px;
 
         &__navs {
             display: none;
         }
+    }
+
+    @media (min-width: $xxl) {
+        max-width: 1300px;
     }
 }

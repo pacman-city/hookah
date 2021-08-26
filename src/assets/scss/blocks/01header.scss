@@ -6,7 +6,7 @@
 
     padding-top: 15px;
 
-    .container {
+    .container-fluid {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -27,7 +27,7 @@
     @media (min-width: $md) {
         padding-top: 30px;
 
-        .container {
+        .container-fluid {
             max-width: 1300px;
             display: flex;
             align-items: flex-end;

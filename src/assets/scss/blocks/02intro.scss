@@ -5,7 +5,7 @@
 
     background: no-repeat center/cover url(../images/intro/background.jpg);
 
-    .container {
+    .container-fluid {
         height: 100%;
         display: grid;
         grid-template-rows: repeat(2, auto);
@@ -54,7 +54,7 @@
         max-height: 1024px;
         min-height: 900px;
 
-        .container {
+        .container-fluid {
             display: grid;
             grid-template: 1fr / auto 1fr;
 
@@ -99,10 +99,6 @@
         height: 100vh;
         max-height: 1024px;
         min-height: 830px;
-
-        .container {
-            max-width: 1300px;
-        }
 
         &__image img {
             max-width: 450px;
