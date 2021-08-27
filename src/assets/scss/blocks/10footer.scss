@@ -1,0 +1,148 @@
+.footer {
+    background: $footer;
+    padding: 30px 0;
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 110px;
+        height: 110px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .call {
+        margin-top: 30px;
+
+        svg {
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+        }
+
+        span {
+            vertical-align: middle;
+            display: inline-block;
+            color: $black;
+        }
+    }
+
+    &__socials {
+        margin-top: 20px;
+    }
+
+    &__blog {
+        margin-top: 18px;
+        margin-bottom: 17px;
+
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    hr {
+        width: 250%;
+        display: block;
+        border: none;
+        border-bottom: 1px solid $border;
+    }
+
+    b {
+        margin-top: 25px;
+        font-family: "Montserrat Alternates";
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 7px;
+        text-align: center;
+        max-width: 250px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    @media (min-width: $md) {
+        padding: 45px 0;
+
+        .container-fluid {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &__wrapper {
+            width: 440px;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .call {
+            margin: 0;
+        }
+
+        &__socials {
+            margin: 0;
+            order: -1;
+            flex-grow: 1;
+        }
+
+        &__blog {
+            margin: 0;
+            order: -2;
+            margin-right: 40px;
+        }
+
+        hr {
+            display: none;
+        }
+
+        b {
+            width: 100%;
+            text-align: right;
+        }
+
+        p {
+            width: 100%;
+            max-width: unset;
+            text-align: right;
+        }
+    }
+
+    @media (min-width: $xxl) {
+        &__wrapper {
+            width: 950px;
+        }
+
+        .call {
+            margin-right: 50px;
+        }
+
+        &__socials {
+            margin-right: 50px;
+            order: -1;
+            flex-grow: 0;
+        }
+
+        &__blog {
+            order: unset;
+        }
+
+        b {
+            margin: 0;
+            flex-grow: 1;
+            width: auto;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
