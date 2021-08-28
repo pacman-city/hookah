@@ -1,0 +1,159 @@
+.reviews {
+    h2 {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    &__item {
+        margin: 0 auto;
+        max-width: 300px;
+        border-radius: 10px;
+        padding: 25px 15px 20px;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        box-shadow: 0 4px 20px 0 #00000030;
+
+        >div {
+            margin-left: 15px;
+        }
+    }
+
+    img {
+        width: 50px;
+    }
+
+    b {
+        font-family: "Montserrat Alternates";
+        font-size: 18px;
+        font-weight: 700;
+        color: $accent;
+    }
+
+    &__stars {
+        margin-top: 5px;
+
+        span::before {
+            content: url(../images/reviews/star.svg);
+            width: 17px;
+            height: 16px;
+            margin-right: 12px;
+        }
+    }
+
+    p {
+        padding-top: 15px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    // ------------------------------------------ glide
+    .glide__slides {
+        padding: 20px 0;
+    }
+
+    // ------------------------------------------ nav buttons
+    &__navs {
+        margin-top: -5px;
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    button {
+        border-color: transparent;
+        padding: 10px;
+    }
+
+    svg {
+        width: 14px;
+        height: 24px;
+    }
+
+    &__nav-left {
+        margin-right: 10px;
+    }
+
+    @media (min-width: $sm) {
+        &__item {
+            max-width: 556px;
+            width: calc(100% - 20px);
+        }
+    }
+
+    @media (min-width: $md) {
+        margin-top: -160px;
+
+        h2 {
+            margin-top: 0;
+            color: $white;
+        }
+
+        &__item {
+            max-width: 450px;
+            background: $white;
+
+            border-radius: 15px;
+            padding: 30px 30px 35px;
+
+            >div {
+                margin-left: 20px;
+            }
+        }
+
+        img {
+            width: 74px;
+        }
+
+        b {
+            font-size: 20px;
+        }
+
+        &__stars {
+            margin-top: 10px;
+        }
+
+        p {
+            padding-top: 25px;
+            font-size: 16px;
+        }
+
+        // ------------------------------------------ nav buttons md
+        position: relative;
+
+        &__navs {
+            position: absolute;
+            width: 100%;
+            bottom: 93px;
+
+            >div {
+                width: 100%;
+                max-width: 688px;
+                margin: 0 auto;
+                justify-content: space-between;
+            }
+        }
+
+        // ------------------------------------------ glide md
+        .glide__slides {
+            padding: 40px 0 20px;
+        }
+    }
+
+    @media (min-width: $xl) {
+        margin: -200px auto 0;
+        max-width: 1120px;
+
+        &__navs {
+            display: none;
+        }
+    }
+
+    @media (min-width: $xxl) {
+        max-width: 1300px;
+    }
+}

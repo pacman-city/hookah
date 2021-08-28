@@ -1,0 +1,90 @@
+.get {
+    margin-top: 40px;
+
+    h2 {
+        text-align: center;
+    }
+
+    &__content {
+        margin-top: 30px;
+        display: grid;
+        grid-template: repeat(4, auto) / minmax(auto, 300px);
+        justify-content: center;
+        gap: 25px;
+    }
+
+    img {
+        border-radius: 15px;
+    }
+
+    b {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+
+    p {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    @media (min-width: $md) {
+        margin-top: 100px;
+
+        &__content {
+            margin-top: 40px;
+            grid-template: repeat(4, auto) / 1fr;
+        }
+
+        &__item {
+            display: grid;
+            grid-template: auto auto / 282px 1fr;
+            justify-content: center;
+            column-gap: 30px;
+        }
+
+        img {
+            grid-area: 1 / 1 / -1 / 2;
+        }
+
+        b {
+            align-self: end;
+            margin-top: 0;
+        }
+
+        b,
+        p {
+            text-align: left;
+        }
+    }
+
+    @media (min-width: $xl) {
+        margin-top: 135px;
+
+        &__content {
+            grid-template: auto / repeat(4, 1fr);
+        }
+
+        &__item {
+            display: grid;
+            grid-template: auto auto 1fr / 1fr;
+            justify-content: center;
+            column-gap: 30px;
+        }
+
+        img {
+            grid-area: unset;
+        }
+
+        b {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}

@@ -4,18 +4,28 @@
 
 @import "./utils/reset";
 @import "./utils/fonts";
-@import "./utils/variables";
-@import "./utils/elements";
+@import "./utils/main";
 
 
 /* BLOCKS */
-@import "./blocks/01header.scss";
-@import "./blocks/02intro.scss";
-@import "./blocks/03steps.scss";
-@import "./blocks/04cards.scss";
-@import "./blocks/05covid.scss";
-@import "./blocks/06columns.scss";
-@import "./blocks/07tiles.scss";
-@import "./blocks/08reviews.scss";
-@import "./blocks/09package.scss";
-@import "./blocks/10footer.scss";
+@import "./blocks/header.scss";
+@import "./blocks/intro.scss";
+@import "./blocks/cards-works.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/modal.scss";
+
+
+/* INDEX */
+@import "./index/sub-intro.scss";
+@import "./index/cards-get.scss";
+@import "./index/covid.scss";
+@import "./index/columns.scss";
+@import "./index/tiles.scss";
+@import "./index/reviews.scss";
+@import "./index/package.scss";
+
+
+/* CATTERING */
+@import "./cattering/what.scss";
+@import "./cattering/get.scss";
+@import "./cattering/why.scss";

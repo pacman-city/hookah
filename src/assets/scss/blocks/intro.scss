@@ -1,0 +1,118 @@
+.intro {
+    height: 100vh;
+    max-height: 825px;
+    min-height: 400px;
+    background: no-repeat center/cover url(../images/intro/background.jpg);
+
+    .container-fluid {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        justify-items: center;
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+
+        img {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: -20px;
+        }
+    }
+
+    h1 {
+        max-width: 300px;
+        text-align: center;
+    }
+
+    p {
+        max-width: 300px;
+        margin: 15px auto 0;
+        color: $white;
+        text-align: center;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    .btn {
+        margin: 25px auto 35px;
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    @media (min-width: $md) {
+        height: 100vh;
+        max-height: 1024px;
+        min-height: 900px;
+
+        .container-fluid {
+            display: grid;
+            grid-template: 1fr / auto 1fr;
+        }
+
+        &__image {
+            grid-area: 1 / 2 / -1 / -1;
+            place-self: end;
+            max-width: 600px;
+            height: 100%;
+        }
+
+        &__content {
+            justify-self: start;
+            grid-area: 1 / 1 / 2 / -1;
+            position: relative;
+        }
+
+        h1 {
+            margin-top: 290px;
+            text-align: left;
+            max-width: 687px;
+        }
+
+        p {
+            margin: 30px 0 0;
+            max-width: 325px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .btn {
+            margin: 45px 0 0;
+            width: 211px;
+            height: 56px;
+            font-size: 18px;
+        }
+    }
+
+    @media (min-width: $xl) {
+        height: 100vh;
+        max-height: 1024px;
+        min-height: 830px;
+
+        h1 {
+            max-width: 500px;
+        }
+
+        p {
+            max-width: 390px;
+        }
+
+        &__image {
+            max-width: 700px;
+        }
+    }
+
+    @media (min-width: $xxl) {
+        &__image {
+            margin-right: -80px;
+        }
+    }
+}

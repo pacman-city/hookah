@@ -18,7 +18,6 @@ const rename = require("gulp-rename");
 const del = require("del");
 const notify = require("gulp-notify");
 
-const panini = require("panini");
 const htmlmin = require('gulp-htmlmin-next');
 
 const imagemin = require("gulp-imagemin");
@@ -28,6 +27,7 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const uglify = require("gulp-uglify");
 
+const fileinclude = require("gulp-file-include");
 
 
 
@@ -68,25 +68,27 @@ const path = {
 function serve() {
   browserSync.init({
     server: {
-      baseDir: "./" + distPath
+      baseDir: "./" + distPath,
+      index: "index.html"
     },
+    tunnel: false,
+    host: 'localhost',
+    port: 9000,
+    logPrefix: "hello"
     // notify: false
+    // server: {
+    //   baseDir: "./build"
+    // },
   });
 }
 
 function html(cb) {
-  panini.refresh();
+  // fileinclude.refresh();
   return src(path.src.html, {
       base: srcPath
     })
     .pipe(plumber())
-    .pipe(panini({
-      root: srcPath,
-      layouts: srcPath + 'layouts/',
-      partials: srcPath + 'partials/',
-      helpers: srcPath + 'helpers/',
-      data: srcPath + 'data/'
-    }))
+    .pipe(fileinclude())
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeComments: true
@@ -237,7 +239,7 @@ function images(cb) {
         interlaced: true
       }),
       imagemin.mozjpeg({
-        quality: 80,
+        quality: 40,
         progressive: true
       }),
       imagemin.optipng({

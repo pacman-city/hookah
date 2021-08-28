@@ -1,0 +1,48 @@
+.covid {
+    margin-top: 80px;
+
+    .wrapper {
+        margin: 0 auto;
+        padding: 30px 15px;
+
+        text-align: center;
+
+        border-radius: 15px;
+        background: no-repeat left top/cover url(../images/covid_19.jpg);
+    }
+
+    h2 {
+        font-size: 20px;
+        color: $white;
+    }
+
+    p {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $white;
+    }
+
+    @media (min-width: $md) {
+        .wrapper {
+            padding: 30px;
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        p {
+            max-width: 500px;
+            margin-top: 12px;
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width: $lg) {
+        .wrapper {
+            background-position: right top;
+        }
+    }
+}

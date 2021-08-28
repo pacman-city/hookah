@@ -13,7 +13,7 @@
         "gulp-babel": "^8.0.0",
         "gulp-clean-css": "^4.3.0",
         "gulp-cssbeautify": "^3.0.0",
-        "gulp-gh-pages": "^0.5.4",
+        "gulp-file-include": "^2.3.0",
         "gulp-htmlmin-next": "^6.0.1",
         "gulp-imagemin": "^7.1.0",
         "gulp-notify": "^3.2.0",
@@ -23,12 +23,11 @@
         "gulp-sourcemaps": "^3.0.0",
         "gulp-uglify": "^3.0.2",
         "gulp-webp": "^4.0.1",
-        "panini": "^1.7.1",
         "webpack": "^5.38.1",
         "webpack-stream": "^6.1.2"
     },
     "browserslist": [
-        ">= 0.5%",
+        ">= 1%",
         "last 2 major versions",
         "not dead",
         "Chrome >= 60",
@@ -36,9 +35,17 @@
         "Firefox ESR",
         "iOS >= 12",
         "Safari >= 12",
-        "not Explorer <= 11"
+        "not Explorer <= 11",
+        "not op_mini all",
+        "not Explorer > 0"
     ],
     "dependencies": {
-        "@glidejs/glide": "^3.4.1"
+        "@glidejs/glide": "^3.4.1",
+        "accordion-js": "^3.1.1",
+        "axios": "^0.21.4",
+        "custom-select": "^1.1.15",
+        "inputmask": "^5.0.6",
+        "lazyload": "^2.0.0-rc.2",
+        "swiper": "^7.0.1"
     }
 }

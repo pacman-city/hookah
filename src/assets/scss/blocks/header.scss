@@ -1,0 +1,55 @@
+.header {
+    padding-top: 15px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .container-fluid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__logo {
+        height: 55px;
+        width: 55px;
+        display: inline-block;
+        background: no-repeat center/cover url(../images/logo.png);
+    }
+
+    .social {
+        display: none;
+    }
+
+    @media (min-width: $md) {
+        padding-top: 30px;
+
+        .container-fluid {
+            max-width: 1300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+        &__logo {
+            height: 110px;
+            width: 110px;
+            margin-right: auto;
+        }
+
+        .social {
+            display: inline-block;
+
+            &[href^="https://instagram"] {
+                margin-right: 50px;
+            }
+        }
+
+        .call {
+            margin-bottom: 7px;
+        }
+    }
+}

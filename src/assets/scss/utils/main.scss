@@ -1,0 +1,305 @@
+// ---------------------------------------------------------------- Colours
+$black: #191919;
+$white: #FFFFFF;
+
+$accent: #9B51E0;
+$accentControls: #F2994A; //buttons
+$accentControlsActive: #EC7D1C;
+
+$border : #EAEAEA;
+$borderControls: #DEDEDE; //input
+
+$tabColor: #404040;
+$footer: #FCF9FF;
+
+// ---------------------------------------------------------------- breakpoints:
+$sm: 576px;
+$md: 768px;
+$lg:992px;
+$xl:1200px;
+$xxl: 1400px;
+
+html {
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 15px;
+        background: #7c7c7c;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $tabColor;
+        border-radius: 6px;
+
+        &:hover {
+            background: #555;
+        }
+
+        &:active {
+            background: #555;
+        }
+    }
+}
+
+body {
+    font-family: "Montserrat";
+    font-style: normal;
+    line-height: 1.2;
+    color: $black;
+
+    background-color: $white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//-------------------------------------------------- CONTAINERS
+main {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 10px;
+
+    @media (min-width: $sm) {
+        padding: 0;
+        max-width: 556px; //10px side spacing
+    }
+
+    @media (min-width: $md) {
+        max-width: 688px; //40px side spacing
+    }
+
+    @media (min-width: $lg) {
+        max-width: 912px;
+    }
+
+    @media (min-width: $xl) {
+        max-width: 1120px;
+    }
+
+    @media (min-width: $xxl) {
+        max-width: 1300px;
+    }
+}
+
+.container-fluid {
+    margin: 0 auto;
+    padding: 0 10px;
+
+    @media (min-width: $md) {
+        padding: 0 40px;
+    }
+
+    @media (min-width: $md) {
+        max-width: 1300px;
+    }
+}
+
+//-------------------------------------------------- TYPOGRAPHY
+h1 {
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 24px;
+    color: $white;
+
+    @media (min-width: $md) {
+        font-size: 42px;
+    }
+}
+
+h2 {
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 24px;
+    color: $black;
+
+    @media (min-width: $md) {
+        font-size: 36px;
+    }
+
+    @media (min-width: $xl) {
+        font-size: 42px;
+    }
+}
+
+h3 {
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 20px;
+    color: $black;
+
+    @media (min-width: $md) {
+        font-size: 22px;
+    }
+}
+
+.accent {
+    color: $accent;
+}
+
+//-------------------------------------------------- BUTTONS
+a,
+button {
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+}
+
+.social {
+    color: $accentControls;
+    transition: color 0.2s ease-out;
+    text-decoration: none;
+
+    &[href^="https://facebook"] {
+        margin-right: 20px;
+    }
+
+    svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    &:hover {
+        color: $accentControlsActive;
+    }
+}
+
+.call {
+    font-size: 0;
+    text-decoration: none;
+    vertical-align: top;
+
+    span {
+        display: none;
+
+        margin-left: 10px;
+        font-family: "Montserrat Alternates";
+        font-size: 20px;
+        font-weight: 700;
+        color: $white;
+    }
+
+    svg {
+        line-height: 20px;
+        vertical-align: top;
+        width: 36px;
+        height: 36px;
+    }
+
+    @media (min-width: $md) {
+        span {
+            display: inline-block;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.page-tab {
+    display: flex;
+    height: 24px;
+    padding: 0 17px;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+    top: 85px;
+
+    transform-origin: 100% 100%;
+    transform: rotate(-90deg);
+
+    font-size: 12px;
+    font-weight: 700;
+    color: $white;
+
+    background: $accent;
+    border-radius: 10px 10px 0 0;
+    border: 2px solid $accent;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    &.active {
+        display: none;
+    }
+
+    @media (min-width: $md) {
+        height: 55px;
+        width: 210px;
+        padding: 0 19px;
+
+        border-radius: 0 0 10px 10px;
+        border-color: $tabColor;
+        background: $tabColor;
+
+        right: 280px;
+        top: -30px;
+
+        transform: none;
+        font-size: 16px;
+
+        &.page-tab-secondary {
+            right: 40px;
+        }
+
+        &.active {
+            display: flex;
+            background: $accent;
+            border-color: $accent;
+            box-shadow: -3px 0px 15px 3px $accent;
+        }
+    }
+
+    @media (min-width: $xl) {
+        height: 65px;
+        left: 260px;
+        top: -40px;
+
+        transition: top 0.1s ease-out;
+
+        &.page-tab-secondary {
+            left: 500px;
+        }
+
+        &.active {
+            top: -30px;
+        }
+
+        &:hover {
+            top: -30px;
+        }
+    }
+}
+
+.btn {
+    display: block;
+
+    color: $white;
+    font-weight: 700;
+    background: $accentControls;
+    border: 3px solid $white;
+    border-radius: 60px;
+
+    box-shadow: 0 0 10px 3px $accentControls;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+        background: $accentControlsActive;
+        box-shadow: 0 0 10px 3px $accentControlsActive;
+    }
+}
