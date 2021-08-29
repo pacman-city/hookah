@@ -1,0 +1,100 @@
+.instagram {
+    margin-top: 55px;
+    margin-bottom: 80px;
+
+    h2 {
+        text-align: center;
+    }
+
+
+    &__photos {
+        margin-top: 25px;
+        display: grid;
+        grid-template: repeat(2, 1fr) / 2fr repeat(2, 1fr);
+        gap: 8px;
+
+        img {
+            height: 100%;
+        }
+
+        img:first-of-type {
+            grid-area: 1 / 1 / -1 / 2;
+        }
+    }
+
+    hr {
+        border: none;
+        border-bottom: 1px solid $border;
+    }
+
+    .btn {
+        margin: 25px 20px 50px;
+        font-size: 14px;
+        padding: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        box-shadow: none;
+        border: none;
+    }
+
+    p {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .instagram__paragraph {
+        margin-top: 40px;
+        font-family: "Montserrat Alternates";
+        font-size: 22px;
+    }
+
+    @media (min-width: $md) {
+        margin-top: 70px;
+        margin-bottom: 100px;
+
+        &__photos {
+            margin-top: 30px;
+            gap: 30px;
+        }
+
+        h2 {
+            text-align: left;
+        }
+
+        &__content {
+            display: grid;
+            grid-template: auto auto / 1fr auto;
+
+            .instagram__photos {
+                grid-area: 2 / 1 / -1 / -1;
+            }
+        }
+
+        .btn {
+            margin: 0;
+            padding: 10px 30px;
+        }
+
+        hr {
+            margin-top: 60px;
+        }
+
+        .instagram__paragraph {
+            font-size: 24px;
+        }
+    }
+
+    @media (min-width: $md) {
+        margin-top: 145px;
+        margin-bottom: 155px;
+
+        &__photos {
+            margin-top: 35px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}

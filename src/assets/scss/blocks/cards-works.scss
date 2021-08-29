@@ -1,3 +1,42 @@
+.card-works-counter {
+    .cards-works__item {
+        counter-increment: ctn;
+
+        &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: counter(ctn);
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            font-family: "Montserrat";
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+            background-color: $accent;
+        }
+
+        @media (min-width: $md) {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (min-width: $md) {
+            &::before {
+                top: unset;
+                bottom: -20px;
+            }
+        }
+    }
+}
+
 .cards-works {
     h2 {
         text-align: center;
@@ -59,6 +98,7 @@
                 }
 
                 div {
+                    margin-top: 10px;
                     max-width: unset;
                 }
             }

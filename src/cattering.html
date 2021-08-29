@@ -15,7 +15,7 @@
       <div class="container-fluid">
 
         <div class="intro__image">
-          <img src="./assets/images/intro/hookah.png" alt="hookah">
+          <img src="./assets/images/intro/cattering.png" alt="hookah cattering">
         </div>
 
         <div class="intro__content">
@@ -44,7 +44,9 @@
 
 
     <!-- ------------------------------------------------------------- cards-works -->
-    @@include('./partials/cards-works.html')
+    <div class="card-works-counter">
+      @@include('./partials/cards-works.html')
+    </div>
 
 
     <!-- ------------------------------------------------------------- choose -->
@@ -146,214 +148,24 @@
     </section>
 
 
-    <!-- ------------------------------------------------------------- tiles -->
-    <section class="tiles">
-      <div class="container">
-
-        <h2>Why order from us</h2>
-
-        <div class="tiles__wrapper">
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile1"></use>
-            </svg>
-            <p>Free delivery in Miami and Fort Lauderdale</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile2"></use>
-            </svg>
-            <p>Fast delivery. Most of deliveries take less than 90 minutes.</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile3"></use>
-            </svg>
-            <p>Free setup - we will set up the hookah for you</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile4"></use>
-            </svg>
-            <p>No deposit - no need to give us extra money</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile5"></use>
-            </svg>
-            <p>60+ Tobacco flavors to choose from</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile6"></use>
-            </svg>
-            <p>Premium tobacco brands: Al-Fakher, Starbuzz, Tangiers, Adalya</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile7"></use>
-            </svg>
-            <p>High quality hookahs, always clean and taut</p>
-          </div>
-
-          <div class="tiles__item">
-            <svg>
-              <use xlink:href="assets/images/sprites.svg#tile8"></use>
-            </svg>
-            <p>Highest-quality natural coconut charcoals.</p>
-          </div>
-
-        </div><!-- end wrapper -->
-      </div><!-- end container -->
+    <!-- ------------------------------------------------------------- instagram -->
+    <section class="instagram">
+      <div class="instagram__content container">
+        <h2>Instagram <span class="accent">photos</span></h2>
+        <div class="instagram__photos">
+          <img src="./assets/images/instagram/instagram_1.jpg" alt="">
+          <img src="./assets/images/instagram/instagram_2.jpg" alt="">
+          <img src="./assets/images/instagram/instagram_3.jpg" alt="">
+          <img src="./assets/images/instagram/instagram_4.jpg" alt="">
+          <img src="./assets/images/instagram/instagram_5.jpg" alt="">
+        </div>
+        <a class="btn" href="https://instagram.com">Visit our instagram page</a>
+      </div>
+      <hr>
+      <p class="instagram__paragraph">Need something <span class="accent">special</span>?</p>
+      <p>Contact us today to discuss your custom hookah package.</p>
     </section>
 
-
-    <!-- ------------------------------------------------------------- reviews -->
-    <section class="reviews">
-
-      <h2>Reviews</h2>
-
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-
-            <li class="glide__slide">
-              <div class="reviews__item">
-                <img src="./assets/images/reviews/avatar.png" alt="reviewer avatar">
-                <div>
-                  <b>Matthew</b>
-                  <div class="reviews__stars">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <p>I got incredible pleasure smoking a hookah. Thanks to Hookah Puff team for perfect service! That was great</p>
-              </div>
-            </li>
-
-            <li class="glide__slide">
-              <div class="reviews__item">
-                <img src="./assets/images/reviews/avatar.png" alt="reviewer avatar">
-                <div>
-                  <b>Matthew</b>
-                  <div class="reviews__stars">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <p>I got incredible pleasure smoking a hookah. Thanks to Hookah Puff team for perfect service! That was great</p>
-              </div>
-            </li>
-
-            <li class="glide__slide">
-              <div class="reviews__item">
-                <img src="./assets/images/reviews/avatar.png" alt="reviewer avatar">
-                <div>
-                  <b>Matthew</b>
-                  <div class="reviews__stars">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <p>I got incredible pleasure smoking a hookah. Thanks to Hookah Puff team for perfect service! That was great</p>
-              </div>
-            </li>
-
-          </ul><!-- end glide slides -->
-
-          <div class="reviews__navs">
-            <div class="glide__arrows" data-glide-el="controls">
-              <button class="reviews__nav-left" type="button" data-glide-dir=">">
-                <svg>
-                  <use xlink:href="assets/images/sprites.svg#left"></use>
-                </svg>
-              </button>
-              <button class="reviews__nav-right" type="button" data-glide-dir="<">
-                <svg>
-                  <use xlink:href="assets/images/sprites.svg#right"></use>
-                </svg>
-              </button>
-            </div>
-          </div><!-- end navs -->
-
-        </div><!-- end glide -->
-        <!-- end container -->
-    </section>
-
-
-    <!-- ------------------------------------------------------------- package -->
-    <section class="package">
-      <div class="container">
-
-        <h2>Choose <span class="accent">your package</span></h2>
-
-        <div class="package__wrapper">
-
-          <div class="package__item">
-            <img src="assets/images/package/package_1.jpg" alt="hookah">
-
-            <h3>1 hookah</h3>
-            <p class="package__promo">+ 3 tobacco filled fruit heads</p>
-            <b>1 complete hookah set with all needed accessories</b>
-
-            <div class="package__price">
-              <b>$75</b>
-              <span>$30 additional day</span>
-            </div>
-
-            <button class="btn" type='button'>Order 1 hookah</button>
-          </div>
-
-          <div class="package__item">
-            <img src="assets/images/package/package_2.jpg" alt="hookah">
-
-            <h3>2 hookah</h3>
-            <p class="package__promo">+ 6 tobacco filled fruit heads</p>
-            <b>2 complete hookah sets with all needed accessories</b>
-
-            <div class="package__price">
-              <b>$120</b>
-              <span>$50 additional day</span>
-            </div>
-
-            <button class="btn" type='button'>Order 2 hookah</button>
-          </div>
-
-          <div class="package__item">
-            <img src="assets/images/package/package_3.jpg" alt="hookah">
-
-            <h3>3 hookah</h3>
-            <p class="package__promo">+ 9 tobacco filled fruit heads</p>
-            <b>3 complete hookah sets with all needed accessories</b>
-
-            <div class="package__price">
-              <b>$160</b>
-              <span>$70 additional day</span>
-            </div>
-
-            <button class="btn" type='button'>Order 3 hookah</button>
-          </div>
-
-        </div><!-- end wrapper -->
-
-      </div><!-- end container -->
-    </section>
 
     @@include('./partials/footer.html')
   </main>

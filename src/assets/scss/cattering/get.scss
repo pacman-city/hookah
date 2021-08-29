@@ -27,6 +27,7 @@
         margin-top: 10px;
         text-align: center;
         font-size: 14px;
+        line-height: 1.4;
     }
 
     @media (min-width: $md) {
@@ -68,7 +69,7 @@
 
         &__item {
             display: grid;
-            grid-template: auto auto 1fr / 1fr;
+            grid-template: 200px minmax(64px, auto) 1fr / 1fr;
             justify-content: center;
             column-gap: 30px;
         }
@@ -78,13 +79,15 @@
         }
 
         b {
-            margin-top: 20px;
+            align-self: start;
+            padding-top: 20px;
             text-align: center;
             font-size: 18px;
         }
 
         p {
             text-align: center;
+            font-size: 16px;
         }
     }
 }
