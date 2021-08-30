@@ -207,6 +207,11 @@ button {
     }
 }
 
+.horizontal {
+    border: none;
+    border-bottom: 1px solid $border;
+}
+
 .page-tab {
     display: flex;
     height: 24px;
@@ -291,8 +296,9 @@ button {
     justify-content: center;
     align-items: center;
 
-    color: $white;
+    text-transform: uppercase;
     font-family: "Montserrat";
+    color: $white;
     font-weight: 700;
     background: $accentControls;
     border: 3px solid $white;

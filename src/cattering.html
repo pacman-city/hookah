@@ -11,19 +11,16 @@
     @@include('./partials/header.html')
 
     <!-- ------------------------------------------------------------- 02-Intro -->
-    <section class="intro">
-      <div class="container-fluid">
-
+    <section class="intro cattering">
+      <div class="intro__container container">
         <div class="intro__image">
-          <img src="./assets/images/intro/cattering.png" alt="hookah cattering">
+          <img src="./assets/images/intro/hookah-cattering.png" alt="hookah cattering">
         </div>
-
         <div class="intro__content">
           <h1>Hookah catering in Miami and all SoFlo</h1>
-
           <p>We bring exceptional hookah experience<span class="accent"> to your event</span></p>
-          <button class="btn" type="button">ORDER SERVICE</button>
         </div>
+        <button class="btn" type="button">ORDER SERVICE</button>
 
       </div>
     </section>
@@ -39,7 +36,7 @@
           <div>We do all the work, so you can relax,<span class="accent"> enjoying your party and clouds of smoke with our hookah!</span></div>
         </div>
       </div>
-      <hr>
+      <hr class="horizontal">
     </section>
 
 
@@ -50,9 +47,57 @@
 
 
     <!-- ------------------------------------------------------------- choose -->
-    <section class="choose container">
-      <h2>Choose how many hookahs you need</h2>
-      <p>This online calculator will show your order price depending on required event duration</p>
+    <section class="choose">
+      <div class="choose__content container">
+        <h2>Choose how many hookahs you need</h2>
+        <p class="choose__sub-title">This online calculator will show your order price depending on required event duration</p>
+
+        <form>
+          <select name="">
+            <option value="">Choose hookah quantity</option>
+            <option value="">
+              <b>3 hookahs</b>
+              <p>Good for parties up to 15<br>Served by 1 hookah attendants.</p>
+            </option>
+            <option value="">
+              <b>5 hookahs</b>
+              <p>Good for parties up to 30<br>Served by 2hookah attendants.</p>
+            </option>
+            <option value="">
+              <b>7 hookahs</b>
+              <p>Good for parties up to 45<br>Served by 3 hookah attendant.</p>
+            </option>
+            <option value="">
+              <b>9 hookahs</b>
+              <p>Good for parties up to 60<br>Served by 4 hookah attendants.</p>
+            </option>
+            <option value="">
+              <b>15 and more hookahs</b>
+              <p>Good for parties up to 75<br>Served by 5 hookah attendants.</p>
+            </option>
+          </select>
+          <hr class="horizontal">
+          <b class="choose__form-text">Choose the hookah event duration: <b class="choose__hours">3 hours</b></b>
+          <div class="choose__form-container">
+            <div class="choose__form-range">
+              <input type="range" min="1" max="5" step="1" value="3">
+              <svg height="5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="5" rx="2.5" fill="#4D1086" />
+                <rect id="range" width="50%" height="5" rx="2.5" fill="#9B51E0" />
+                <rect x="25%" width="2" height="5" fill="#C28BF7" />
+                <rect x="50%" width="2" height="5" fill="#C28BF7" />
+                <rect x="75%" width="2" height="5" fill="#C28BF7" />
+              </svg>
+              <div class="choose__numbers"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></div>
+            </div>
+            <b class="choose__form-text">Your hookah catering order price: <b class="choose__price">$320</b></b>
+          </div>
+          <hr class="horizontal">
+          <button class="btn" type="submit">Order hookah catering</button>
+        </form>
+        <p class="choose__text">Prices don’t include tax and tips</p>
+        <p class="choose__text">You’ll only pay extra if you book extra time or activities.</p>
+      </div>
     </section>
 
 
@@ -92,17 +137,17 @@
       <div class="why__cards">
         <div class="why__card">
           <b>5 years</b>
-          <hr>
+          <hr class="horizontal">
           <p>Of experience is the minimum for our hookah masters.</p>
         </div>
         <div class="why__card">
           <b>100+</b>
-          <hr>
+          <hr class="horizontal">
           <p>Small parties and big events had been served.</p>
         </div>
         <div class="why__card">
           <b>Since 2015</b>
-          <hr>
+          <hr class="horizontal">
           <p>We work to satisfy even the most sophisticated tastes.</p>
         </div>
       </div>
@@ -161,7 +206,7 @@
         </div>
         <a class="btn" href="https://instagram.com">Visit our instagram page</a>
       </div>
-      <hr>
+      <hr class="horizontal">
       <p class="instagram__paragraph">Need something <span class="accent">special</span>?</p>
       <p>Contact us today to discuss your custom hookah package.</p>
     </section>

@@ -1,26 +1,19 @@
 .intro {
-    height: 100vh;
-    max-height: 825px;
-    min-height: 400px;
     background: no-repeat center/cover url(../images/intro/background.jpg);
 
-    .container-fluid {
+    &__container {
         height: 100%;
         display: grid;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: auto 1fr;
         justify-items: center;
     }
 
     &__image {
-        position: relative;
         width: 100%;
-        max-width: 400px;
 
         img {
             width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: -20px;
+            margin-top: -30%;
         }
     }
 
@@ -53,16 +46,15 @@
         max-height: 1024px;
         min-height: 900px;
 
-        .container-fluid {
-            display: grid;
-            grid-template: 1fr / auto 1fr;
-        }
-
         &__image {
             grid-area: 1 / 2 / -1 / -1;
             place-self: end;
-            max-width: 600px;
-            height: 100%;
+            max-width: 650px;
+
+            img {
+                margin-top: 0;
+                transform: translateX(100px);
+            }
         }
 
         &__content {
@@ -71,7 +63,7 @@
             position: relative;
         }
 
-        h1 {
+        .intro__container .intro__content h1 {
             margin-top: 290px;
             text-align: left;
             max-width: 687px;
@@ -93,11 +85,7 @@
     }
 
     @media (min-width: $xl) {
-        height: 100vh;
-        max-height: 1024px;
-        min-height: 830px;
-
-        h1 {
+        .intro__container .intro__content h1 {
             max-width: 500px;
         }
 
@@ -106,13 +94,54 @@
         }
 
         &__image {
-            max-width: 700px;
+            max-width: 850px;
+            justify-self: end;
         }
     }
 
     @media (min-width: $xxl) {
         &__image {
+            max-width: 950px;
             margin-right: -80px;
+        }
+    }
+}
+
+.intro.cattering {
+    background: no-repeat center/cover url(../images/intro/background-cattering.jpg);
+
+    h1 {
+        margin-top: 100px;
+    }
+
+    .intro__image {
+        grid-area: 2 / 1 / -1 / 2;
+        order: 1;
+
+        img {
+            margin-top: -5%;
+        }
+    }
+
+    .btn {
+        grid-area: 2 / 1 / -1 / -1;
+        z-index: 1;
+        align-self: end;
+    }
+
+    @media (min-width: $md) {
+        .btn {
+            grid-area: 2 / 1 / -1 / -1;
+            z-index: 1;
+            place-self: start;
+        }
+
+        .intro__image {
+            grid-area: 1 / 1 / -1 / -1;
+            height: 100%;
+
+            display: flex;
+            align-items: flex-end;
         }
     }
 }
