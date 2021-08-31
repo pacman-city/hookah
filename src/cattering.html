@@ -53,34 +53,22 @@
         <p class="choose__sub-title">This online calculator will show your order price depending on required event duration</p>
 
         <form>
-          <select name="">
+          <select name="package selected" id='cattering-select'>
             <option value="">Choose hookah quantity</option>
-            <option value="">
-              <b>3 hookahs</b>
-              <p>Good for parties up to 15<br>Served by 1 hookah attendants.</p>
-            </option>
-            <option value="">
-              <b>5 hookahs</b>
-              <p>Good for parties up to 30<br>Served by 2hookah attendants.</p>
-            </option>
-            <option value="">
-              <b>7 hookahs</b>
-              <p>Good for parties up to 45<br>Served by 3 hookah attendant.</p>
-            </option>
-            <option value="">
-              <b>9 hookahs</b>
-              <p>Good for parties up to 60<br>Served by 4 hookah attendants.</p>
-            </option>
-            <option value="">
-              <b>15 and more hookahs</b>
-              <p>Good for parties up to 75<br>Served by 5 hookah attendants.</p>
-            </option>
+            <option value="3 hookahs">Good for parties up to 15 Served by 1 hookah attendants.</option>
+            <option value="5 hookahs">Good for parties up to 30 Served by 2hookah attendants.</option>
+            <option value="7 hookahs">Good for parties up to 45 Served by 3 hookah attendant.</option>
+            <option value="9 hookahs">Good for parties up to 60 Served by 4 hookah attendants.</option>
+            <option value="15 & more hookahs">Good for parties up to 75 Served by 5 hookah attendants.</option>
           </select>
+
+          <div class="choose__paragraph"></div>
+
           <hr class="horizontal">
           <b class="choose__form-text">Choose the hookah event duration: <b class="choose__hours">3 hours</b></b>
           <div class="choose__form-container">
             <div class="choose__form-range">
-              <input type="range" min="1" max="5" step="1" value="3">
+              <input name="hours" type="range" min="1" max="5" step="1" value="3">
               <svg height="5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="100%" height="5" rx="2.5" fill="#4D1086" />
                 <rect id="range" width="50%" height="5" rx="2.5" fill="#9B51E0" />
