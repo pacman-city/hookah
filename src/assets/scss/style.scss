@@ -1,20 +1,9 @@
-// node modules:
-@import 'swiper/swiper-bundle';
+// @import 'swiper/swiper-bundle';
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
-
-@import 'nativejs-select/build/nativejs-select';
-
 
 
 @import "./utils/reset";
-@import "./utils/fonts";
 @import "./utils/main";
-
-// @import "./utils/custom-select";
-
-
-// @import "./utils/custom-select-copy";
-@import "./utils/custom-select";
 
 
 /* BLOCKS */
@@ -23,6 +12,7 @@
 @import "./blocks/cards-works.scss";
 @import "./blocks/footer.scss";
 @import "./blocks/modal.scss";
+@import "./blocks/select.scss";
 
 
 /* INDEX */
@@ -37,6 +27,7 @@
 
 /* CATTERING */
 @import "./cattering/choose.scss";
+@import "./cattering/choose-custom-select";
 @import "./cattering/what.scss";
 @import "./cattering/get.scss";
 @import "./cattering/why.scss";

@@ -6,6 +6,12 @@
     left: 0;
     width: 100%;
 
+    &__wrapper {
+        @media (max-width: $md) {
+            max-width: unset;
+        }
+    }
+
     .container {
         display: flex;
         align-items: center;
@@ -17,7 +23,7 @@
         height: 55px;
         width: 55px;
         display: inline-block;
-        background: no-repeat center/cover url(../images/logo.png);
+        background: no-repeat center/cover url(../images/logo.webp);
     }
 
     .social {
@@ -28,6 +34,38 @@
         position: fixed;
         top: 25px;
         right: 10px;
+    }
+
+    .page-tab {
+        display: flex;
+        height: 24px;
+        padding: 0 17px;
+        text-decoration: none;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        position: absolute;
+        right: 0;
+        top: 85px;
+
+        transform-origin: 100% 100%;
+        transform: rotate(-90deg);
+
+        font-size: 12px;
+        font-weight: 700;
+        color: $white;
+
+        background: $accent;
+        border-radius: 10px 10px 0 0;
+        border: 2px solid $accent;
+
+        font-size: 12px;
+        font-weight: 700;
+
+        &.active {
+            display: none;
+        }
     }
 
     @media (min-width: $md) {
@@ -56,6 +94,60 @@
         .call {
             position: static;
             margin-bottom: 7px;
+        }
+
+        .page-tab {
+            height: 55px;
+            width: 210px;
+            padding: 0 19px;
+
+            border-radius: 0 0 10px 10px;
+            border-color: $tabColor;
+            background: $tabColor;
+
+            z-index: 1;
+            right: 280px;
+            top: -30px;
+
+            transform: none;
+            font-size: 16px;
+
+            &.page-tab-secondary {
+                right: 40px;
+            }
+
+            &.active {
+                display: flex;
+                background: $accent;
+                border-color: $accent;
+                box-shadow: -3px 0px 15px 3px $accent;
+            }
+        }
+    }
+
+    @media (min-width: $xl) {
+        .page-tab {
+            height: 65px;
+            left: 260px;
+            top: -40px;
+
+            transition: top 0.05s;
+
+            &.page-tab-secondary {
+                left: 500px;
+            }
+
+            &.active {
+                top: -30px;
+            }
+
+            &:not(.active) {
+                padding-top: 12px;
+            }
+
+            &:hover {
+                top: -30px;
+            }
         }
     }
 }

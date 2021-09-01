@@ -14,13 +14,13 @@
     <section class="intro cattering">
       <div class="intro__container container">
         <div class="intro__image">
-          <img src="./assets/images/intro/hookah-cattering.png" alt="hookah cattering">
+          <img src="./assets/images/intro/hookah-cattering.webp" width="650" height="521" alt="hookah cattering">
         </div>
         <div class="intro__content">
           <h1>Hookah catering in Miami and all SoFlo</h1>
           <p>We bring exceptional hookah experience<span class="accent"> to your event</span></p>
         </div>
-        <button class="btn" type="button">ORDER SERVICE</button>
+        <button class="btn" type="button" data-order="1">ORDER SERVICE</button>
 
       </div>
     </section>
@@ -62,19 +62,19 @@
             <option value="15 & more hookahs">Good for parties up to 75 Served by 5 hookah attendants.</option>
           </select>
 
-          <div class="choose__paragraph"></div>
+          <div class="choose__paragraph">Good for parties up to 15 Served by 1 hookah attendants.</div>
 
           <hr class="horizontal">
           <b class="choose__form-text">Choose the hookah event duration: <b class="choose__hours">3 hours</b></b>
           <div class="choose__form-container">
             <div class="choose__form-range">
-              <input name="hours" type="range" min="1" max="5" step="1" value="3">
+              <input name="hours" type="range" min="1" max="5" step="1" value="3" aria-label="rental duration">
               <svg height="5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="100%" height="5" rx="2.5" fill="#4D1086" />
                 <rect id="range" width="50%" height="5" rx="2.5" fill="#9B51E0" />
-                <rect x="25%" width="2" height="5" fill="#C28BF7" />
-                <rect x="50%" width="2" height="5" fill="#C28BF7" />
-                <rect x="75%" width="2" height="5" fill="#C28BF7" />
+                <rect x="25.6%" width="2" height="5" fill="#C28BF7" />
+                <rect x="49.6%" width="2" height="5" fill="#C28BF7" />
+                <rect x="73.9%" width="2" height="5" fill="#C28BF7" />
               </svg>
               <div class="choose__numbers"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></div>
             </div>
@@ -95,22 +95,22 @@
 
       <div class="get__content">
         <div class="get__item">
-          <img src="./assets/images/cards-get/card_1.jpg" alt="card">
+          <img src="./assets/images/cards-get/card_1.webp" width="300" height="191" alt="card">
           <b>Unlimited all-inclusive service</b>
           <p>We provide unlimited refills of tobacco, unlimited tendering of charcoals, an unlimited supply of hygienic mouth tips, and an unlimited attention to your guests from our hookah experts.</p>
         </div>
         <div class="get__item">
-          <img src="./assets/images/cards-get/card_2.jpg" alt="card">
+          <img src="./assets/images/cards-get/card_2.webp" width="300" height="191" alt="card">
           <b>Exotic experience</b>
           <p>For many people hookah is still a mystery from the Middle East. Having hookahs on your event will make lasting impression on your guests.</p>
         </div>
         <div class="get__item">
-          <img src="./assets/images/cards-get/card_3.jpg" alt="card">
+          <img src="./assets/images/cards-get/card_3.webp" width="300" height="191" alt="card">
           <b>Professionally made hookahs</b>
           <p>All of our hookah attendants have a big experience and know how to satisfy most sophisticated taste.</p>
         </div>
         <div class="get__item">
-          <img src="./assets/images/cards-get/card_4.jpg" alt="card">
+          <img src="./assets/images/cards-get/card_4.webp" width="300" height="192" alt="card">
           <b>Beautiful presentation</b>
           <p>Not only our hookahs are highest quality, but also have a beautiful design. Each hookah is illuminated with a led light and in combination with real fruit head looks just awesome.</p>
         </div>
@@ -186,13 +186,13 @@
       <div class="instagram__content container">
         <h2>Instagram <span class="accent">photos</span></h2>
         <div class="instagram__photos">
-          <img src="./assets/images/instagram/instagram_1.jpg" alt="">
-          <img src="./assets/images/instagram/instagram_2.jpg" alt="">
-          <img src="./assets/images/instagram/instagram_3.jpg" alt="">
-          <img src="./assets/images/instagram/instagram_4.jpg" alt="">
-          <img src="./assets/images/instagram/instagram_5.jpg" alt="">
+          <img src="./assets/images/instagram/instagram_1.webp" width="620" height="650" alt="instagram">
+          <img src="./assets/images/instagram/instagram_2.webp" width="282" height="282" alt="instagram">
+          <img src="./assets/images/instagram/instagram_3.webp" width="282" height="282" alt="instagram">
+          <img src="./assets/images/instagram/instagram_4.webp" width="282" height="282" alt="instagram">
+          <img src="./assets/images/instagram/instagram_5.webp" width="282" height="282" alt="instagram">
         </div>
-        <a class="btn" href="https://instagram.com">Visit our instagram page</a>
+        <a class="btn" href="https://instagram.com" target="_blank">Visit our instagram page</a>
       </div>
       <hr class="horizontal">
       <p class="instagram__paragraph">Need something <span class="accent">special</span>?</p>
@@ -202,8 +202,11 @@
 
     @@include('./partials/footer.html')
   </main>
+
+
   @@include('./partials/modal-thanks.html')
   @@include('./partials/modal-order.html')
+
   <!-- JS -->
   <script src="assets/js/app.js"></script>
 </body>

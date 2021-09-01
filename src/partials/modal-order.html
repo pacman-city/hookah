@@ -1,14 +1,17 @@
-<div class="modal-overlay">
-  <button class="btn-close">
-    <svg>
-      <use xlink:href="assets/images/sprites.svg#close"></use>
-    </svg>
-  </button>
-  <div class="modal-order modal">
-    <form name="order">
+<div class="modal-overlay" data-modal-order>
 
+  <div class="modal-order modal modal-container">
+    <form name="order package">
       <div class="modal-order__step1">
-        <div class="modal__sup-title accent">Step 1/2</div>
+        <div class="modal__sup-title accent">
+          Step 1/2
+          <button class="btn-close" aria-label="close modal" data-close>
+            <svg>
+              <use xlink:href="assets/images/sprites.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+
         <b class="modal-order__title">Leave your contacts</b>
         <div class="star">
           <input class="txt" type="text" placeholder="Your name" autocomplete="off" minlength="2" maxlength="24" name="name" required>
@@ -17,56 +20,47 @@
           <input class="txt" type="tel" placeholder='Your phone' autocomplete="off" minlength="10" name="phone" data-mask required>
         </div>
         <hr>
-        <b>
-          Details
-          <svg>
-            <use xlink:href="assets/images/sprites.svg#chevron-left"></use>
-          </svg>
-        </b>
-        <input class="txt" type="text" placeholder='Delivery address' autocomplete="off" minlength="5" name="address" required>
-        <input class="txt" type="datetime-local" placeholder='Delivery date and time' autocomplete="off" name="date" required>
+
+        <div class="modal-order__dropDown">
+          <b class="modal-order__dropDown-trigger">
+            Details
+            <svg>
+              <use xlink:href="assets/images/sprites.svg#chevron-left"></use>
+            </svg>
+          </b>
+          <div class="modal-order__dropDown-container">
+            <input class="txt" type="text" placeholder='Delivery address' autocomplete="off" minlength="5" name="address" required>
+            <input class="txt" type="text" placeholder='Delivery date and time' autocomplete="off" name="date" required data-date-time>
+          </div>
+        </div>
       </div>
 
       <div class="modal-order__step2">
-        <div class="modal__sup-title accent">Step 2/2</div>
+        <div class="modal__sup-title accent">
+          Step 2/2
+          <button class="btn-close" aria-label="close modal" data-close>
+            <svg>
+              <use xlink:href="assets/images/sprites.svg#close"></use>
+            </svg>
+          </button>
+        </div>
         <b class="modal-order__title">Leave order details</b>
         <p>You can choose several flavors in 1 list to mix them</p>
-
-        <select name="fruit head 1">
-          <option value="not selected">Choose flavor for fruit head 1</option>
-          <option value="Double Apple">Double Apple</option>
-          <option value="Blueberry">Blueberry</option>
-          <option value="Watermelon">Watermelon</option>
-          <option value="Mint">Mint</option>
-          <option value="Strawberry">Strawberry</option>
-          <option value="Grape">Grape</option>
-          <option value="Melon">Melon</option>
-          <option value="Grapefruit">Grapefruit</option>
-          <option value="Guava">Guava</option>
-          <option value="Kiwi">Kiwi</option>
-          <option value="Orange">Orange</option>
-        </select>
-
+        <div class="modal-order__flavours">
+          <!-- flavours JS -->
+        </div>
       </div>
 
       <hr>
       <b>Your order:</b>
       <div class="modal-order__item">
-        <img src="./assets/images/package/package_1.jpg" alt="item">
-        <div>
-          <b>1 hookah <span class="accent">$120</span></b>
-          <p>3 tobacco filled fruit heads</p>
-        </div>
+        <!-- ordered item JS -->
       </div>
+
       <hr>
 
-      <div class="modal-order__step1">
-        <button class="btn" type="button">Next step</button>
-      </div>
-      <div class="modal-order__step2">
-        <button class="btn" type="submit">Order service</button>
-      </div>
-
+      <div class="modal-order__step1"><button class="btn" type="button" data-next>Next step</button></div>
+      <div class="modal-order__step2"><button class="btn" type="submit">Order service</button></div>
     </form>
   </div>
 </div>

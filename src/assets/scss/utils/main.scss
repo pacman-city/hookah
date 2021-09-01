@@ -19,6 +19,53 @@ $lg:992px;
 $xl:1200px;
 $xxl: 1400px;
 
+// ---------------------------------------------------------------- fonts:
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: local('Montserrat Regular'),
+        url('../fonts/Montserrat-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: local('Montserrat Medium'),
+        url('../fonts/Montserrat-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Montserrat SemiBold'),
+        url('../fonts/Montserrat-SemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Roboto Bold'),
+        url('../fonts/Montserrat-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: local('MontserratAlternates Bold'),
+        url('../fonts/MontserratAlternates-Bold.woff') format('woff');
+}
+
+// ---------------------------------------------------------------- main:
 html {
     scroll-behavior: smooth;
 
@@ -86,19 +133,6 @@ main {
     }
 }
 
-.container-fluid {
-    margin: 0 auto;
-    padding: 0 10px;
-
-    @media (min-width: $md) {
-        padding: 0 40px;
-    }
-
-    @media (min-width: $md) {
-        max-width: 1300px;
-    }
-}
-
 //-------------------------------------------------- TYPOGRAPHY
 h1 {
     font-family: "Montserrat Alternates";
@@ -152,6 +186,7 @@ button {
 button {
     cursor: pointer;
     background: transparent;
+    border-color: transparent;
 }
 
 .social {
@@ -210,85 +245,6 @@ button {
 .horizontal {
     border: none;
     border-bottom: 1px solid $border;
-}
-
-.page-tab {
-    display: flex;
-    height: 24px;
-    padding: 0 17px;
-    text-decoration: none;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
-    position: absolute;
-    right: 0;
-    top: 85px;
-
-    transform-origin: 100% 100%;
-    transform: rotate(-90deg);
-
-    font-size: 12px;
-    font-weight: 700;
-    color: $white;
-
-    background: $accent;
-    border-radius: 10px 10px 0 0;
-    border: 2px solid $accent;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    &.active {
-        display: none;
-    }
-
-    @media (min-width: $md) {
-        height: 55px;
-        width: 210px;
-        padding: 0 19px;
-
-        border-radius: 0 0 10px 10px;
-        border-color: $tabColor;
-        background: $tabColor;
-
-        right: 280px;
-        top: -30px;
-
-        transform: none;
-        font-size: 16px;
-
-        &.page-tab-secondary {
-            right: 40px;
-        }
-
-        &.active {
-            display: flex;
-            background: $accent;
-            border-color: $accent;
-            box-shadow: -3px 0px 15px 3px $accent;
-        }
-    }
-
-    @media (min-width: $xl) {
-        height: 65px;
-        left: 260px;
-        top: -40px;
-
-        transition: top 0.1s ease-out;
-
-        &.page-tab-secondary {
-            left: 500px;
-        }
-
-        &.active {
-            top: -30px;
-        }
-
-        &:hover {
-            top: -30px;
-        }
-    }
 }
 
 .btn {

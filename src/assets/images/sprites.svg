@@ -219,7 +219,7 @@
         <path d="M28.8909 0.60651L35.9619 7.67758L7.67767 35.9618L0.6066 28.8908L28.8909 0.60651Z"
             fill="CurrentColor" />
     </symbol>
-    <symbol id="chevron-left" width="8" height="12" viewBox="0 0 8 12" fill="none">
+    <symbol id="chevron-left" width="12" height="18" viewBox="0 0 8 12" fill="none">
         <path d="M7.07084 9.89938L5.65662 11.3136L-0.000231743 5.65674L1.41398 4.24252L7.07084 9.89938Z"
             fill="#F2994A" />
         <path d="M1.41398 7.07095L-0.000231743 5.65674L5.65662 -0.000115534L7.07084 1.4141L1.41398 7.07095Z"

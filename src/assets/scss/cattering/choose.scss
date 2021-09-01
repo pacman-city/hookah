@@ -1,6 +1,6 @@
 .choose {
     margin-top: 60px;
-    background: no-repeat center/cover url(../images/background_choose.jpg);
+    background: no-repeat center/cover url(../images/background_choose.webp);
 
     &__content {
         padding-top: 30px;
@@ -41,8 +41,8 @@
     }
 
     &__numbers {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 9px;
+        padding-right: 8px;
         margin-top: -50px;
         margin-bottom: 30px;
         display: flex;
@@ -257,12 +257,18 @@
 
         .choose__price {
             font-size: 42px;
-            width: 50%;
+            width: 140px;
             text-align: right;
         }
 
         .choose__form-text:first-of-type {
             font-size: 18px;
+        }
+    }
+
+    @media (min-width: $xxl) {
+        .choose__price {
+            width: 250px;
         }
     }
 }

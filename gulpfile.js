@@ -235,16 +235,16 @@ function jsWatch(cb) {
 function images(cb) {
   return src(path.src.images)
     .pipe(imagemin([
-      imagemin.gifsicle({
-        interlaced: true
-      }),
-      imagemin.mozjpeg({
-        quality: 40,
-        progressive: true
-      }),
-      imagemin.optipng({
-        optimizationLevel: 5
-      }),
+      // imagemin.gifsicle({
+      //   interlaced: true
+      // }),
+      // imagemin.mozjpeg({
+      //   quality: 40,
+      //   progressive: true
+      // }),
+      // imagemin.optipng({
+      //   optimizationLevel: 1
+      // }),
       imagemin.svgo({
         plugins: [{
             removeViewBox: true
@@ -255,13 +255,13 @@ function images(cb) {
         ]
       })
     ]))
+    // .pipe(dest(path.build.images))
+    .pipe(webp({
+      // lossless: true,
+      quality: 60,
+      alphaQuality: 90
+    }))
     .pipe(dest(path.build.images))
-    // .pipe(webp({
-    //   // lossless: true,
-    //   quality: 80,
-    //   alphaQuality: 80
-    // }))
-    // .pipe(dest(path.build.webp))
     .pipe(browserSync.reload({
       stream: true
     }));
