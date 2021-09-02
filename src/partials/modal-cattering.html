@@ -1,0 +1,44 @@
+<div class="modal-overlay" data-modal-cattering>
+
+  <div class="modal-order modal modal-container">
+    <form class="cattering">
+      <div class="modal-order__step1">
+      </div>
+
+      <div class="modal__sup-title accent">
+        Leave your contacts
+        <button class="btn-close" aria-label="close modal" data-close>
+          <svg>
+            <use xlink:href="assets/images/sprites.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="star">
+        <input class="txt" type="text" placeholder="Your name" autocomplete="off" minlength="2" maxlength="24" name="name" required>
+      </div>
+      <div class="star">
+        <input class="txt" type="tel" placeholder='Your phone' autocomplete="off" minlength="1" name="phone" data-mask required>
+      </div>
+
+      <hr>
+
+      <div class="modal-order__dropDown">
+        <b class="modal-order__dropDown-trigger">
+          Details
+          <svg>
+            <use xlink:href="assets/images/sprites.svg#chevron-left"></use>
+          </svg>
+        </b>
+        <div class="modal-order__dropDown-container">
+          <input class="txt" type="text" placeholder='Delivery address' autocomplete="off" minlength="5" name="address">
+          <input class="txt" type="text" placeholder='Delivery date and time' autocomplete="off" name="date" data-date-time>
+        </div>
+      </div>
+
+      <hr>
+      <button class="btn" type="submit">Order service</button>
+
+    </form>
+  </div>
+</div>

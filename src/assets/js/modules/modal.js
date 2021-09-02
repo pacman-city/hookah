@@ -72,6 +72,14 @@ class Modal {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const formData = new FormData(form);
+
+      if (e.target.className === 'cattering') {
+        const selected = document.querySelector('#cattering-select').value || 'not selected';
+        const time = document.querySelector('input[type="range"]').value;
+        formData.append('hookah quantity', selected);
+        formData.append('event duration', time);
+      }
+
       form.reset();
       document.body.style.cursor = "wait";
       axios.post("./mail.php", formData)

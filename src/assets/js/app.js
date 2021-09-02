@@ -82,17 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaQueryList1200.addEventListener('change', handler1200);
   }
 
-
-
-
-
-
-
-
-
-
-  //-----------------------------------------
-
   // setting up scripts for exact page as needed:
   const isCutteringPage = document.querySelector('.cattering');
   if (isCutteringPage) {
@@ -102,10 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setSlider();
   }
 
-  new Modal(['order', 'service', 'thanks', 'error']);
-
-  //-----------------------------------------
-
+  new Modal(['order', 'cattering', 'thanks', 'error']);
 
   // modal-drop-down:
   const dropTrigger = document.querySelectorAll('.modal-order__dropDown-trigger');
@@ -130,5 +116,4 @@ document.addEventListener('DOMContentLoaded', () => {
     firstStep.forEach(item => item.style.display = 'none');
     lastStep.forEach(item => item.style.display = 'block');
   })
-
 })

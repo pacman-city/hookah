@@ -13,17 +13,17 @@
     min-height: 100%;
 
     &::-webkit-scrollbar {
-        width: 15px;
+        width: 8px;
     }
 
     &::-webkit-scrollbar-track-piece {
-        border-radius: 6px;
+        border-radius: 4px;
         background: #EFEFEF;
     }
 
     &::-webkit-scrollbar-thumb {
         background: #cccccc;
-        border-radius: 6px;
+        border-radius: 4px;
         transition: background-color 0.1s;
 
         &:hover,
@@ -71,6 +71,18 @@
 
     @media (min-width: $md) {
         padding: 50px 10px;
+
+        &::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        &::-webkit-scrollbar-track-piece {
+            border-radius: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+        }
     }
 }
 
@@ -315,20 +327,24 @@
 
 .modal-thanks {
     height: 100%;
-    max-height: 660px;
-    min-height: 150px;
+    max-height: 380px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    &__sup-title {
-        margin-top: 30px;
-    }
+    padding: 40px 0 100px;
 
-    svg {
+    &__svg {
         padding-top: 20px;
         display: block;
         margin: 0 auto;
+        width: 120px;
+        height: 90px;
+    }
+
+    .modal__sup-title {
+        padding: 0 20px 50px 0;
     }
 
     h1 {
@@ -344,5 +360,44 @@
         font-size: 16px;
         line-height: 1.4;
         font-weight: 600;
+    }
+
+    @media screen and (min-width: $md) {
+        max-height: 660px;
+
+        &__svg {
+            width: 200px;
+            height: 150px;
+        }
+
+        .modal__sup-title {
+            height: 0;
+            padding: 0;
+        }
+    }
+}
+
+.modal-thanks {
+    height: 100%;
+    max-height: 240px;
+    min-height: 200px;
+    padding: 40px 0 80px;
+
+    .modal__sup-title {
+        padding: 0 20px 50px 0;
+    }
+
+    h1 {
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    @media screen and (min-width: $md) {
+        max-height: 660px;
+
+        .modal__sup-title {
+            height: 0;
+            padding: 0;
+        }
     }
 }

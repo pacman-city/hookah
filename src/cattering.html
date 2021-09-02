@@ -81,7 +81,7 @@
             <b class="choose__form-text">Your hookah catering order price: <b class="choose__price">$320</b></b>
           </div>
           <hr class="horizontal">
-          <button class="btn" type="submit">Order hookah catering</button>
+          <button class="btn" type="button" data-cattering>Order hookah catering</button>
         </form>
         <p class="choose__text">Prices don’t include tax and tips</p>
         <p class="choose__text">You’ll only pay extra if you book extra time or activities.</p>
@@ -205,7 +205,10 @@
 
 
   @@include('./partials/modal-thanks.html')
+  @@include('./partials/modal-error.html')
+
   @@include('./partials/modal-order.html')
+  @@include('./partials/modal-cattering.html')
 
   <!-- JS -->
   <script src="assets/js/app.js"></script>
