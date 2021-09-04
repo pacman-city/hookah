@@ -29,7 +29,8 @@ const uglify = require("gulp-uglify");
 
 const fileinclude = require("gulp-file-include");
 
-
+// return src(path.src.mailer)
+// .pipe(dest(path.build.mailer))
 
 /* Paths */
 const srcPath = 'src/';
@@ -42,14 +43,18 @@ const path = {
     css: distPath + "assets/css/",
     images: distPath + "assets/images/",
     webp: distPath + "assets/images/webp",
-    fonts: distPath + "assets/fonts/"
+    fonts: distPath + "assets/fonts/",
+    mailer: distPath + "phpmailer",
+    mailerPhp: distPath
   },
   src: {
     html: srcPath + "*.html",
     js: srcPath + "assets/js/*.js",
     css: srcPath + "assets/scss/*.scss",
     images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-    fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+    fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
+    mailer: srcPath + "assets/phpmailer/**/*",
+    mailerPhp: srcPath + "assets/mail.php"
   },
   watch: {
     html: srcPath + "**/*.html",
@@ -97,7 +102,6 @@ function html(cb) {
     .pipe(browserSync.reload({
       stream: true
     }));
-
   cb();
 }
 
@@ -163,7 +167,6 @@ function cssWatch(cb) {
     .pipe(browserSync.reload({
       stream: true
     }));
-
   cb();
 }
 
@@ -201,7 +204,6 @@ function js(cb) {
     .pipe(browserSync.reload({
       stream: true
     }));
-
   cb();
 }
 
@@ -228,7 +230,6 @@ function jsWatch(cb) {
     .pipe(browserSync.reload({
       stream: true
     }));
-
   cb();
 }
 
@@ -265,7 +266,6 @@ function images(cb) {
     .pipe(browserSync.reload({
       stream: true
     }));
-
   cb();
 }
 
@@ -275,13 +275,29 @@ function fonts(cb) {
     .pipe(browserSync.reload({
       stream: true
     }));
+  cb();
+}
 
+function mailer(cb) {
+  return src(path.src.mailer)
+    .pipe(dest(path.build.mailer))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+  cb();
+}
+
+function mailerPhp(cb) {
+  return src(path.src.mailerPhp)
+    .pipe(dest(path.build.mailerPhp))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
   cb();
 }
 
 function clean(cb) {
   return del(path.clean);
-
   cb();
 }
 
@@ -293,7 +309,7 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, mailer, mailerPhp));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -304,6 +320,8 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
+exports.mailer = mailer;
+exports.mailer = mailerPhp;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
