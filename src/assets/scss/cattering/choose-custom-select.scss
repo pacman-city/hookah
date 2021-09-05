@@ -125,7 +125,7 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $md) {
     .custom-select-cattering {
         select {
             visibility: hidden;
@@ -147,6 +147,12 @@
         .custom-select-option {
             font-size: 0;
             cursor: pointer;
+
+            outline: none;
+
+            &:focus-visible::before {
+                outline: -webkit-focus-ring-color auto 1px;
+            }
 
             &:first-of-type {
                 display: none;
@@ -203,7 +209,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $xl) {
     .custom-select-cattering {
         .custom-select-panel {
             display: grid;

@@ -1,6 +1,8 @@
 .choose {
     margin-top: 60px;
     background: no-repeat center/cover url(../images/background_choose.webp);
+    position: relative;
+    z-index: 0;
 
     &__content {
         padding-top: 30px;
@@ -25,7 +27,7 @@
         line-height: 1.4;
     }
 
-    form {
+    &__form {
         margin-top: 15px;
         margin-bottom: 25px;
 
@@ -164,7 +166,7 @@
             margin-top: 12px;
         }
 
-        form {
+        &__form {
             margin-top: 40px;
 
             .horizontal:first-of-type {
@@ -233,7 +235,7 @@
             font-size: 16px;
         }
 
-        form {
+        &__form {
             margin-top: 45px;
 
             .horizontal:last-of-type {

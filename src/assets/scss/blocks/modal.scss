@@ -12,64 +12,72 @@
     height: 100%;
     min-height: 100%;
 
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    &::-webkit-scrollbar-track-piece {
-        border-radius: 4px;
-        background: #EFEFEF;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #cccccc;
-        border-radius: 4px;
-        transition: background-color 0.1s;
-
-        &:hover,
-        &:active {
-            background: #999;
-        }
-    }
-
     &.open {
         display: block;
         background: #000b;
         backdrop-filter: blur(5px);
 
-        .modal {
-            border: 1px solid $white;
-            -webkit-mask-position: 100% 100%;
-            -webkit-mask-size: 100% 250%;
-            -webkit-mask-image: -webkit-gradient(linear, center top, center bottom,
-                    color-stop(0.00, rgba(0, 0, 0, 1)),
-                    color-stop(0.4, rgba(0, 0, 0, 1)),
-                    color-stop(0.50, rgba(0, 0, 0, 0)),
-                    color-stop(0.6, rgba(0, 0, 0, 0)),
-                    color-stop(1.00, rgba(0, 0, 0, 0)));
-            animation: wipe 0.5s linear forwards;
+        .modal-show {
+            background-color: $white;
 
-            @keyframes wipe {
-                0% {
-                    -webkit-mask-position: 100% 100%;
-                    background: #fff1;
+            animation-name: fadeInDown;
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translate3d(0, -100%, 0);
                 }
 
-                90% {
-                    background: #fff1;
-                    -webkit-mask-position: 0 0;
+                20% {
+                    opacity: 0;
                 }
 
-                100% {
-                    -webkit-mask-position: 0 0;
-                    background: #fff;
-                    -webkit-mask-image: none;
+                to {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            @media screen and (min-width: $md) {
+                border: 1px solid $white;
+                -webkit-mask-position: 100% 100%;
+                -webkit-mask-size: 100% 250%;
+                -webkit-mask-image: -webkit-gradient(linear, center top, center bottom,
+                        color-stop(0.00, rgba(0, 0, 0, 1)),
+                        color-stop(0.4, rgba(0, 0, 0, 1)),
+                        color-stop(0.50, rgba(0, 0, 0, 0)),
+                        color-stop(0.6, rgba(0, 0, 0, 0)),
+                        color-stop(1.00, rgba(0, 0, 0, 0)));
+                animation: wipe 0.5s linear forwards;
+
+                @keyframes wipe {
+                    0% {
+                        -webkit-mask-position: 100% 100%;
+                        background: #fff1;
+                    }
+
+                    90% {
+                        background: #fff1;
+                        -webkit-mask-position: 0 0;
+                    }
+
+                    100% {
+                        -webkit-mask-position: 0 0;
+                        background: #fff;
+                        -webkit-mask-image: none;
+                    }
                 }
             }
         }
+
+        .modal-info {
+            background-color: $white;
+        }
     }
 
-    @media (min-width: $md) {
+    @media (min-width: $xl) {
         padding: 50px 10px;
 
         &::-webkit-scrollbar {
@@ -78,10 +86,18 @@
 
         &::-webkit-scrollbar-track-piece {
             border-radius: 6px;
+            background: #EFEFEF;
         }
 
         &::-webkit-scrollbar-thumb {
+            background: #cccccc;
             border-radius: 6px;
+            transition: background-color 0.1s;
+
+            &:hover,
+            &:active {
+                background: #999;
+            }
         }
     }
 }
@@ -92,7 +108,6 @@
     height: auto;
     max-width: 450px;
     border-radius: 15px;
-
 
     &__sup-title {
         padding: 15px 0;
@@ -150,15 +165,10 @@
 }
 
 .modal-order {
-    padding: 0 15px;
+    padding: 0 15px 1px;
 
     &__step2 {
         display: none;
-
-        >p {
-            margin-bottom: 25px;
-            text-align: center;
-        }
     }
 
     .modal-order__title {
@@ -192,25 +202,19 @@
     }
 
     hr {
-        border: none;
         padding-top: 10px;
+        border: none;
         border-bottom: 1px solid $borderControls;
     }
 
     b {
-        margin-top: 16px;
-        margin-bottom: 15px;
         display: block;
+        margin: 15px 0;
 
         text-align: center;
         font-family: "Montserrat Alternates";
         color: $black;
         font-size: 16px;
-
-        svg {
-            width: 16px;
-            height: 16px;
-        }
     }
 
     .btn {
@@ -273,19 +277,29 @@
     &__dropDown {
         margin-top: 10px;
 
-        b {
+        .modal-order__dropDown-trigger {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px 0;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
 
-        .modal-order__dropDown-trigger {
             cursor: pointer;
-            margin: 0;
-            padding: 16px 0 15px 0;
+
+            text-align: center;
+            font-family: "Montserrat Alternates";
+            color: $black;
+            font-size: 16px;
 
             &:hover {
                 text-decoration: underline;
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
             }
         }
 
@@ -295,45 +309,31 @@
         }
 
         &.open {
-            .modal-order__dropDown-trigger {
-                border-color: transparent;
-            }
-
             .modal-order__dropDown-container {
-                max-height: auto;
                 max-height: 500px;
                 transition: max-height 0.4s;
-
-                animation: drd 0.4s steps(1, end) forwards;
-
-                @keyframes drd {
-                    to {
-                        overflow: visible;
-                    }
-                }
             }
 
             svg {
                 transform: rotateZ(-90deg);
-                transform-origin: 50% 50%;
             }
         }
     }
 
     @media (min-width: $md) {
-        padding: 0 100px;
+        padding: 0 100px 1px;
     }
 }
 
 .modal-thanks {
     height: 100%;
-    max-height: 380px;
-    min-height: 300px;
+    min-height: 350px;
+    padding: 40px 0 80px;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    padding: 40px 0 100px;
 
     &__svg {
         padding-top: 20px;
@@ -344,7 +344,9 @@
     }
 
     .modal__sup-title {
-        padding: 0 20px 50px 0;
+        position: absolute;
+        top: 30px;
+        right: 30px;
     }
 
     h1 {
@@ -369,31 +371,6 @@
             width: 200px;
             height: 150px;
         }
-
-        .modal__sup-title {
-            height: 0;
-            padding: 0;
-        }
-    }
-}
-
-.modal-thanks {
-    height: 100%;
-    max-height: 240px;
-    min-height: 200px;
-    padding: 40px 0 80px;
-
-    .modal__sup-title {
-        padding: 0 20px 50px 0;
-    }
-
-    h1 {
-        margin-top: 12px;
-        text-align: center;
-    }
-
-    @media screen and (min-width: $md) {
-        max-height: 660px;
 
         .modal__sup-title {
             height: 0;

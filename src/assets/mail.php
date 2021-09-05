@@ -71,7 +71,7 @@ if ( $method === 'POST' ) {
   // //$sec_admin_email  = 'dostavkabbqbar@yandex.ru';
   // //$manager_email  = "manager@website58.ru";
   // $sender_email = "noreply@context-shark.ru";
-  //   //	$form_subject = $_POST["form_subject"];
+  // $form_subject = $_POST["form_subject"];
   // $form_subject = 'Обратная связь с сайта КОНТЕКСТ SHARK квиз';
   $project_name = $_GET["project_name"];
   //$admin_email  = 'nas.lazarewa@yandex.ru';

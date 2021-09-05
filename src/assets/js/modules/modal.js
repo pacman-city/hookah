@@ -1,14 +1,19 @@
 import axios from 'axios';
+// https://github.com/custom-select/custom-select
 import customSelect from 'custom-select';
+// https://www.npmjs.com/package/focus-trap
+import * as focusTrap from 'focus-trap'
 
 
 class Modal {
   constructor(selectors) {
-    this.tanksModal = document.querySelector('.modal_thanks');
+    this.tanksModal = document.querySelector('[data-modal-thanks]');
     this.errorModal = document.querySelector('[data-modal-error]');
     this.closeBtns = document.querySelectorAll('[data-close]');
     this.forms = document.querySelectorAll('form');
     this.allModals = this.getModals(selectors);
+
+    this.trap = focusTrap.createFocusTrap(this.allModals);
 
     this.selectedForm = null;
     this.selectsContainer = document.querySelector('.modal-order__flavours');
@@ -17,7 +22,7 @@ class Modal {
 
     // binding:
     this.onOverlay = this.onOverlay.bind(this);
-    this.onEsc = this.onEsc.bind(this);
+    this.onKeyboard = this.onKeyboard.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.createForm = this.createForm.bind(this);
 
@@ -32,12 +37,12 @@ class Modal {
           // check if form the same to prevent selected items from clear up:
           (set) && (this.selectedForm !== set) && this.createForm(this.selectedForm = set);
 
+          this.trap.activate();
+
           if (item === 'order') {
             // reset steps:
-            const step1 = document.querySelectorAll('.modal-order__step1');
-            const step2 = document.querySelectorAll('.modal-order__step2');
-            step1.forEach(item => item.style = "");
-            step2.forEach(item => item.style = "");
+            document.querySelectorAll('.modal-order__step1').forEach(item => item.style = "");
+            document.querySelectorAll('.modal-order__step2').forEach(item => item.style = "");
           }
 
           document.body.style.overflow = 'hidden';
@@ -46,13 +51,24 @@ class Modal {
     });
 
     this.closeBtns.forEach(item => item.addEventListener('click', this.closeModal));
-    document.addEventListener('keydown', this.onEsc);
+    document.addEventListener('keydown', this.onKeyboard);
     this.allModals.forEach(item => item.addEventListener('click', this.onOverlay));
     this.forms.forEach(item => this.bindPostData(item));
+
+    // focus management - select (form - choose):
+    const chooseOptions = document.querySelectorAll('.choose .custom-select-option');
+    chooseOptions.forEach(item => item.setAttribute('tabindex', 0));
+    chooseOptions.forEach(item => item.addEventListener('focus', function() {
+      this.classList.add('choose-selected');
+    }));
+    chooseOptions.forEach(item => item.addEventListener('blur', function() {
+      this.classList.remove('choose-selected');
+    }));
   }
 
-  onEsc(e) {
-    (e.code === 'Escape') && this.closeModal();
+  onKeyboard(e) {
+    e.code === 'Escape' && this.closeModal();
+    e.code === 'Enter' && e.target.classList.contains('choose-selected') && e.target.click();
   }
 
   onOverlay(e) {
@@ -77,7 +93,7 @@ class Modal {
         const selected = document.querySelector('#cattering-select').value || 'not selected';
         const time = document.querySelector('input[type="range"]').value;
         formData.append('hookah quantity', selected);
-        formData.append('event duration', time);
+        formData.append('event duration', `${time} hours`);
       }
 
       form.reset();
@@ -88,15 +104,21 @@ class Modal {
           if (res.status === 200) {
             this.closeModal();
             this.tanksModal.classList.add('open');
+            this.trap.activate();
+            document.body.style.overflow = 'hidden';
           } else {
             this.closeModal();
             this.errorModal.classList.add('open');
+            this.trap.activate();
+            document.body.style.overflow = 'hidden';
           }
         })
         .catch(error => {
           this.closeModal();
           console.log(error);
           this.errorModal.classList.add('open');
+          this.trap.activate();
+          document.body.style.overflow = 'hidden';
         });
     });
   }
@@ -105,6 +127,7 @@ class Modal {
     document.body.style.overflow = '';
     document.body.style.cursor = "";
     this.allModals.forEach(item => (item) && item.classList.remove('open'));
+    this.trap.deactivate();
   }
 
   createForm(set) {

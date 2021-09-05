@@ -1,6 +1,6 @@
-<div class="modal-overlay" data-modal-order>
+<div class="modal-overlay" aria-labellledby="modal-order" role="dialog" data-modal-order>
 
-  <div class="modal-order modal modal-container">
+  <div class="modal-order modal modal-show modal-container" role="document">
     <form name="order package">
       <div class="modal-order__step1">
         <div class="modal__sup-title accent">
@@ -21,16 +21,16 @@
         </div>
         <hr>
 
-        <div class="modal-order__dropDown">
-          <b class="modal-order__dropDown-trigger">
+        <div class="modal-order__dropDown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="modal-order__dropDown-trigger">
             Details
             <svg>
               <use xlink:href="assets/images/sprites.svg#chevron-left"></use>
             </svg>
-          </b>
-          <div class="modal-order__dropDown-container">
-            <input class="txt" type="text" placeholder='Delivery address' autocomplete="off" minlength="5" name="address" required>
-            <input class="txt" type="text" placeholder='Delivery date and time' autocomplete="off" name="date" required data-date-time>
+          </button>
+          <div class="modal-order__dropDown-container" aria-hidden='true'>
+            <input tabindex="-1" class="txt" type="text" placeholder='Delivery address' autocomplete="off" name="address">
+            <input tabindex="-1" class="txt" type="text" placeholder='Delivery date and time' autocomplete="off" name="date" data-date-time>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
           </button>
         </div>
         <b class="modal-order__title">Leave order details</b>
-        <p>You can choose several flavors in 1 list to mix them</p>
+        <!-- <p>You can choose several flavors in 1 list to mix them</p> -->
         <div class="modal-order__flavours">
           <!-- flavours JS -->
         </div>

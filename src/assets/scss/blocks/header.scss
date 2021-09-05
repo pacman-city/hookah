@@ -34,6 +34,8 @@
         position: fixed;
         top: 25px;
         right: 10px;
+        z-index: 100000;
+        transform: translateX(-1px);
     }
 
     .page-tab {

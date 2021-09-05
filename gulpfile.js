@@ -76,11 +76,11 @@ function serve() {
       baseDir: "./" + distPath,
       index: "index.html"
     },
-    tunnel: false,
-    host: 'localhost',
+    // tunnel: false,
+    // host: 'localhost',
     port: 9000,
-    logPrefix: "hello"
-    // notify: false
+    notify: false
+    // logPrefix: "hello"
     // server: {
     //   baseDir: "./build"
     // },
