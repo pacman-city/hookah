@@ -8,7 +8,7 @@ const gulp = require("gulp");
 const plumber = require("gulp-plumber"); // модуль для отслеживания ошибок
 const browserSync = require("browser-sync").create(); // сервер для работы и автоматического обновления страниц
 
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require('sass'));
 const sourcemaps = require('gulp-sourcemaps'); // модуль для генерации карты исходных файлов
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require('gulp-clean-css');
@@ -69,21 +69,14 @@ const path = {
 
 
 /* Tasks */
-
 function serve() {
   browserSync.init({
     server: {
       baseDir: "./" + distPath,
       index: "index.html"
     },
-    // tunnel: false,
-    // host: 'localhost',
     port: 9000,
     notify: false
-    // logPrefix: "hello"
-    // server: {
-    //   baseDir: "./build"
-    // },
   });
 }
 
@@ -119,12 +112,8 @@ function css(cb) {
         this.emit('end');
       }
     }))
-    .pipe(sass({
-      includePaths: './node_modules/'
-    }))
-    .pipe(autoprefixer({
-      cascade: true
-    }))
+    .pipe(sass({includePaths: './node_modules/'}))
+    .pipe(autoprefixer({ cascade: true }))
     // .pipe(cssbeautify())// отключил style.css
     // .pipe(dest(path.build.css))
     .pipe(cleanCSS({
@@ -186,17 +175,15 @@ function js(cb) {
     .pipe(webpackStream({
       mode: "production",
       devtool: 'source-map',
-      output: {
-        filename: 'app.js',
-      },
+      output: { filename: 'app.js' },
       module: {
         rules: [{
           test: /\.(js)$/,
           exclude: /(node_modules)/,
           loader: 'babel-loader',
-          query: {
-            presets: ['@babel/preset-env']
-          }
+          // query: {
+          //   presets: ['@babel/preset-env']
+          // }
         }]
       }
     }))
@@ -222,9 +209,7 @@ function jsWatch(cb) {
     }))
     .pipe(webpackStream({
       mode: "development",
-      output: {
-        filename: 'app.js',
-      }
+      output: { filename: 'app.js' }
     }))
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({
@@ -247,19 +232,16 @@ function images(cb) {
       //   optimizationLevel: 1
       // }),
       imagemin.svgo({
-        plugins: [{
-            removeViewBox: true
-          },
-          {
-            cleanupIDs: false
-          }
+        plugins: [
+          { removeViewBox: true },
+          { cleanupIDs: false }
         ]
       })
     ]))
     // .pipe(dest(path.build.images))
     .pipe(webp({
-      // lossless: true,
-      quality: 60,
+      lossless: true,
+      quality: 80,
       alphaQuality: 90
     }))
     .pipe(dest(path.build.images))
@@ -278,23 +260,23 @@ function fonts(cb) {
   cb();
 }
 
-function mailer(cb) {
-  return src(path.src.mailer)
-    .pipe(dest(path.build.mailer))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-  cb();
-}
+// function mailer(cb) {
+//   return src(path.src.mailer)
+//     .pipe(dest(path.build.mailer))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }));
+//   cb();
+// }
 
-function mailerPhp(cb) {
-  return src(path.src.mailerPhp)
-    .pipe(dest(path.build.mailerPhp))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-  cb();
-}
+// function mailerPhp(cb) {
+//   return src(path.src.mailerPhp)
+//     .pipe(dest(path.build.mailerPhp))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }));
+//   cb();
+// }
 
 function clean(cb) {
   return del(path.clean);
@@ -309,7 +291,7 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, mailer, mailerPhp));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -320,8 +302,6 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
-exports.mailer = mailer;
-exports.mailer = mailerPhp;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
