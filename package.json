@@ -1,4 +1,6 @@
 {
+    "name": "hookah",
+    "version": "1.0.0",
     "devDependencies": {
         "@babel/core": "^7.13.10",
         "@babel/preset-env": "^7.14.4",
